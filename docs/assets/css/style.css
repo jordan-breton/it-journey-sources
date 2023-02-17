@@ -1,0 +1,115 @@
+[hidden] + *{
+	display:none;
+}
+
+.md-typeset .namespace{
+	opacity: 0.5;
+	color: var(--md-default-fg-color);
+	/*margin-right: -4px;*/
+}
+
+.md-header__button.md-logo img{
+	filter: hue-rotate(220deg);
+}
+
+.md-typeset h5{
+	text-transform: initial;
+}
+.md-typeset h5 code{
+	font-size: 1.1em;
+}
+[data-resolved]{
+	cursor:pointer;
+}
+[data-resolved]:hover{
+	text-decoration: underline;
+	color: var(--md-accent-fg-color);
+}
+
+.md-buttons{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.md-buttons > .md-button:not(:last-child){
+	margin-right: 20px;
+}
+
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt{
+	--md-code-hl-keyword-color: #F97583;
+}
+.highlight .o,
+.highlight .ow{
+	--md-code-hl-operator-color: #F97583;
+}
+.highlight .cpf,
+.highlight .l,
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .si,
+.highlight .ss{
+	--md-code-hl-string-color: #93CBFF;
+}
+
+html.preview-mode{
+	overflow:hidden;
+
+}
+html.preview-mode header{
+	display:none;
+}
+html.preview-mode .md-top{
+	display:none;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6{
+	color:var(--md-accent-fg-color);
+}
+html:not(.preview-mode) .md-typeset h1,
+html:not(.preview-mode) .md-typeset h2,
+html:not(.preview-mode) .md-typeset h3,
+html:not(.preview-mode) .md-typeset h4,
+html:not(.preview-mode) .md-typeset h5,
+html:not(.preview-mode) .md-typeset h6{
+	scroll-margin-top: 5rem;
+}
+[disable-linenums] + table td.linenos{
+	display:none;
+}
+:not([disable-linenums]) + .highlighttable code,
+.highlighttable:first-child code{
+	padding-left: 5px;
+}
+.tooltip{
+	position:fixed;
+	top:0;
+	left:0;
+	width: 0;
+	height: 0;
+	overflow: auto;
+	opacity: 0;
+	transition: opacity 0.35s;
+	box-shadow: 0 0 20px rgba(0,0,0,1);
+	border: 2px solid var(--md-primary-fg-color);
+}
+
+.tooltip.display{
+	width: min(800px, 100vw);
+	height:min(400px, calc(100vh - 50px));
+	opacity: 1;
+	overflow:hidden;
+}
