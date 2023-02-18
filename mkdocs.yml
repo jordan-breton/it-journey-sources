@@ -1,11 +1,12 @@
 site_name: IT Journey
 site_description: "So many years ago, I saw my first digital device. It was a Casio SF-3300ER that didn't even work! But my curiosity toward IT started there, and grown with me :)"
 site_author: Jordan Breton
-site_dir: ../website
+site_dir: ../generated
+site_url: https://it-journey.jordan-breton.com
 copyright: >
   Copyright &copy; 2023 Jordan Breton –
   <a href="#__consent">Change cookie settings</a>
-repo_name: 'IT Journey Repository (placeholder)'
+repo_name: 'IT Journey (Mirror)'
 repo_url: 'https://github.com/jordan-breton/it-journey-website-giscus'
 
 nav:
@@ -16,8 +17,8 @@ nav:
 
 theme:
   name: 'material'
-  logo: 'assets/images/logo.xs.png'
-  favicon: 'assets/images/logo.xs.png'
+  logo: './assets/images/logo-xs.png'
+  favicon: './assets/images/logo-xs.png'
   language: 'en'
   custom_dir: overrides
   features:
@@ -39,18 +40,20 @@ theme:
     - toc.integrate
     - toc.follow
   palette:
-    - primary: deep purple
-    - accent: amber
     # Palette toggle for light mode
     - scheme: default
+      primary: deep purple
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
+      primary: deep purple
+      accent: amber
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to system preference
 
 extra:
   analytics:
@@ -81,15 +84,15 @@ extra:
       as to measure the relevance of my content and whether users find what they're
       searching for. With your consent, you're helping me to create better content.
 
-extra_css:
-  - assets/css/style.css
+#extra_css:
+#  - assets/css/style.css
 
 plugins:
   - meta
   - tags
   - typeset
   - privacy
-  - optimize
+  #- optimize
   - search:
       lang: en
   - social

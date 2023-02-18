@@ -1,0 +1,50 @@
+.md-header{
+	background-color: transparent;
+}
+.md-header--shadow{
+	box-shadow: none;
+}
+
+.container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.md-tabs{
+	background-color: transparent;
+}
+.md-tabs__link{
+	font-size: 1.2rem;
+}
+
+.container .md-grid.md-typeset{
+	max-width: initial;
+}
+
+.container .image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	height: 120vh;
+}
+
+.container .image img{
+	height: 100%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	max-width: initial;
+}
+
+.shadow-overlap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 100px 350px 250px rgba(0,0,0,0.7);
+}

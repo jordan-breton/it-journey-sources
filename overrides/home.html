@@ -1,18 +1,19 @@
-{#-
-This file was automatically generated - do not edit
--#}
-{% extends "overrides/main.html" %}
+{% extends "main.html" %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="assets/css/home.css">
+{% endblock %}
 {% block tabs %}
 {{ super() }}
-<style>.md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
-<section class="tx-container">
+<section class="container">
 	<div class="md-grid md-typeset">
-		<div class="tx-hero">
-			<div class="tx-hero__image">
-				<img src="assets/images/illustration.jpg" alt="" width="1659" height="1200" draggable="false">
+		<div class="home">
+			<div class="image">
+				<img src="assets/images/illustration.jpg" draggable="false">
+				<div class="shadow-overlap"></div>
 			</div>
-			<div class="tx-hero__content">
-				<h1>Technical documentation that just works</h1>
+			<div class="content">
+				<h1><span class="highlight">IT</span> is a wonderful sea</h1>
 				<p>{{ config.site_description }}. Set up in 5 minutes.</p>
 				<a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
 					Get started
