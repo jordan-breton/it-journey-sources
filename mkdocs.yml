@@ -1,8 +1,8 @@
 site_name: IT Journey
-site_description: "So many years ago, I saw my first digital device. It was a Casio SF-3300ER that didn't even work! But my curiosity toward IT started there, and grown with me :)"
+site_description: "This website has two purposes: introducing myself and talking about passionating IT related stuff :)"
 site_author: Jordan Breton
 site_dir: ../generated
-site_url: https://it-journey.jordan-breton.com
+site_url: https://it-journey.tech
 copyright: >
   Copyright &copy; 2023 Jordan Breton –
   <a href="#__consent">Change cookie settings</a>
@@ -10,8 +10,16 @@ repo_name: 'IT Journey (Mirror)'
 repo_url: 'https://github.com/jordan-breton/it-journey-website-giscus'
 
 nav:
-  - Home:
-    - 'index.md'
+  - Home: 'index.md'
+  - Projects:
+      - 'projects/index.md'
+      - 'Current projects': 'projects/current.md'
+      - 'Archived projects': 'projects/archived.md'
+  - About:
+      - 'about/index.md'
+      - History: 'about/history.md'
+      - Story: 'about/story.md'
+      - Skills: 'about/skill-set.md'
   - Blog:
     - blog/index.md
 
@@ -31,7 +39,7 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.top
-    - navigation.instant
+    #- navigation.instant
     - navigation.path
     - navigation.footer
     - search.suggest
@@ -42,18 +50,18 @@ theme:
   palette:
     # Palette toggle for light mode
     - scheme: default
-      primary: deep purple
+      primary: amber
       accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
-      primary: deep purple
+      primary: amber
       accent: amber
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Switch to bright mode
 
 extra:
   analytics:
@@ -83,26 +91,56 @@ extra:
       I use cookies to recognize your repeated visits and preferences, as well
       as to measure the relevance of my content and whether users find what they're
       searching for. With your consent, you're helping me to create better content.
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jordan-breton-281088267/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/JordanBretonIT
+    - icon: fontawesome/brands/github
+      link: https://github.com/jordan-breton
+    - icon: fontawesome/brands/gitlab
+      link: https://framagit.org/
 
-#extra_css:
-#  - assets/css/style.css
+extra_css:
+  - assets/css/style.css
 
 plugins:
   - meta
   - tags
   - typeset
-  - privacy
+  - privacy:
+      external_assets_exclude:
+        - cdn.jsdelivr.net/npm/mathjax@3/*
+        - giscus.app/*
   #- optimize
   - search:
       lang: en
   - social
-  - blog
+  - blog:
+      post_excerpt: required
+      draft_if_future_date: false
   - glightbox
-  - git-authors
+  - git-authors:
+      exclude:
+        - contact.md
+        - index.md
+        - blog/*
   - git-revision-date-localized:
       type: datetime
       enable_creation_date: true
       fallback_to_build_date: true
+      exclude:
+        - contact.md
+        - index.md
+        - blog/*
+  - rss:
+      match_path: blog/posts/.*
+      comments_path: "#__comments"
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
 
 markdown_extensions:
   - pymdownx.arithmatex
@@ -116,7 +154,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.magiclink
   - pymdownx.smartsymbols
   - pymdownx.inlinehilite
@@ -137,7 +175,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.snippets:
-      base_path: ['./docs']
+      base_path: ['snippets/']
       check_paths: true
   - pymdownx.progressbar
   - abbr

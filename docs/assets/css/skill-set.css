@@ -1,0 +1,38 @@
+.lvl{
+	color: var(--lvl-color);
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.lvl6{
+	--lvl-color: rgb(255, 0, 128);
+}
+.lvl5{
+	--lvl-color: rgb(255, 114, 2);
+}
+.lvl4{
+	--lvl-color: rgb(234, 207, 0);
+}
+.lvl3{
+	--lvl-color: rgb(113, 221, 6);
+}
+.lvl2{
+	--lvl-color: rgb(0, 177, 201);
+}
+.lvl1{
+	--lvl-color: rgb(131, 131, 131);
+}
+
+.grid.cards.split ul li{
+	display:flex;
+	justify-content: space-between;
+}
+
+.buttons{
+	display:grid;
+	grid-gap: 0.1rem;
+}
+
+.fix-table-shrink td{
+	min-width: 110px;
+}

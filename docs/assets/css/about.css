@@ -1,0 +1,37 @@
+.photo{
+	max-height: 250px;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.presentation{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.presentation .content{
+	margin-left: 2rem;
+	flex: 1;
+	min-width: 350px;
+}
+
+.buttons{
+	text-align: center;
+}
+
+.buttons .md-button{
+	margin: 0.2rem;
+}
+
+@media (max-width: 700px){
+	.presentation{
+		display:block;
+		text-align: center;
+	}
+	.presentation .content{
+		margin-left: 0;
+		text-align: left;
+		min-width: initial;
+	}
+}

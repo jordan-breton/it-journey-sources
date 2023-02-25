@@ -1,26 +1,46 @@
 .md-header{
 	background-color: transparent;
+	color: white;
+}
+.md-header svg *{
+	fill: white;
+}
+.md-header input::placeholder{
+	color: rgba(255,255,255,0.5);
 }
 .md-header--shadow{
 	box-shadow: none;
 }
+.home{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
 
 .container{
+	height: calc(120vh - 2.4rem - 2.4rem);
+}
+
+.container > *{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 100%;
 }
 
 .md-tabs{
 	background-color: transparent;
+	color: white;
 }
 .md-tabs__link{
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .container .md-grid.md-typeset{
-	max-width: initial;
+	max-height: 120vh;
+	max-width: 100%;
 }
 
 .container .image{
@@ -47,4 +67,50 @@
 	width: 100%;
 	height: 100%;
 	box-shadow: inset 0 100px 350px 250px rgba(0,0,0,0.7);
+}
+
+.container .content{
+	position: sticky;
+	bottom: 50px;
+	left: 50px;
+	margin: 0 auto 50px auto;
+	display:flex;
+	width: 100%;
+	max-width: 61rem;
+}
+.container .content .wrapper{
+	display: inline-block;
+	font-size: 1rem;
+	max-width: 600px;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0.2);
+	backdrop-filter: blur(8px);
+}
+
+.container .content .wrapper .md-button{
+	margin-top: 0.6rem;
+}
+
+.container .content h1{
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.container .content h1,
+.container .content p{
+	color: white;
+}
+
+
+@media (max-width: 1000px){
+	.shadow-overlap{
+		box-shadow: inset 0 100px 150px 150px rgba(0,0,0,0.7);
+	}
+}
+
+@media (max-width: 700px){
+	.shadow-overlap{
+		box-shadow: none;
+	}
 }

@@ -13,18 +13,20 @@
 				<div class="shadow-overlap"></div>
 			</div>
 			<div class="content">
-				<h1><span class="highlight">IT</span> is a wonderful sea</h1>
-				<p>{{ config.site_description }}. Set up in 5 minutes.</p>
-				<a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
-					Get started
-				</a>
-				<a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
-					Go to GitHub
-				</a>
+				<div class="wrapper">
+					<h1><span class="highlight">IT</span> is a wonderful tech jungle. Let's dive deep into it!</h1>
+					<p>{{ config.site_description }} What do you want to start with?</p>
+					<a href="/blog" title="Check the blog!" class="md-button md-button--primary" data-md-color-primary="amber">
+						I love IT too!
+					</a>
+					<a href="/about" title="If you want to work with me, it's this way :)" class="md-button" data-md-color-primary="amber">
+						Who are you?
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 {% endblock %}
-{% block content %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block content %}{{ super() }}{% endblock %}
+{% block footer %}{{ super() }}{% endblock %}
