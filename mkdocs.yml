@@ -7,7 +7,7 @@ copyright: >
   Copyright &copy; 2023 Jordan Breton –
   <a href="#__consent">Change cookie settings</a>
 repo_name: 'IT Journey (Mirror)'
-repo_url: 'https://github.com/jordan-breton/it-journey-website-giscus'
+repo_url: 'https://github.com/jordan-breton/it-journey-sources'
 
 nav:
   - Home: 'index.md'

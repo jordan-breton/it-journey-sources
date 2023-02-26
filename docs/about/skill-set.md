@@ -3,7 +3,7 @@ css:
   - '/assets/css/skill-set.css'
 ---
 
-## About the following skill set presentation
+## About the following skill set presentation 
 
 The following skill set is as exhaustive as possible. The level scale is inspired by the 
 [CEFR (Common European Framework of Reference for Languages)](https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages)
