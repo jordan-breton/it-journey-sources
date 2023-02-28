@@ -1,3 +1,5 @@
 authors:
   - me
 comments: true
+css:
+  - /assets/css/blog/post.css

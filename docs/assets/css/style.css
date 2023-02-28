@@ -42,7 +42,7 @@
 	--md-code-hl-string-color: #93CBFF;
 }
 
-/*.md-typeset h1,
+.md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
 .md-typeset h4,
@@ -50,20 +50,9 @@
 .md-typeset h6{
 	color:var(--md-accent-fg-color);
 }
-html:not(.preview-mode) .md-typeset h1,
-html:not(.preview-mode) .md-typeset h2,
-html:not(.preview-mode) .md-typeset h3,
-html:not(.preview-mode) .md-typeset h4,
-html:not(.preview-mode) .md-typeset h5,
-html:not(.preview-mode) .md-typeset h6{
-	scroll-margin-top: 5rem;
-}*/
-[disable-linenums] + table td.linenos{
+
+[no-linenums] + * td.linenos{
 	display:none;
-}
-:not([disable-linenums]) + .highlighttable code,
-.highlighttable:first-child code{
-	padding-left: 5px;
 }
 
 .md-footer-custom__inner{

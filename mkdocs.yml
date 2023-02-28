@@ -32,6 +32,8 @@ theme:
   features:
     - announce.dismiss
     - content.code.annotate
+    - content.code.copy
+    - content.code.select
     - content.tooltips
     - navigation.tracking
     - navigation.indexes
@@ -120,13 +122,11 @@ plugins:
       post_excerpt: required
       draft_if_future_date: false
   - glightbox
-  - git-authors:
-      exclude:
-        - contact.md
-        - index.md
-        - blog/*
+  - git-committers:
+      repository: jordan-breton/it-journey-sources
+      branch: main
   - git-revision-date-localized:
-      type: datetime
+      type: timeago
       enable_creation_date: true
       fallback_to_build_date: true
       exclude:
@@ -180,7 +180,7 @@ markdown_extensions:
   - pymdownx.progressbar
   - abbr
   - toc:
-      title: On this page
+      title: Summary
       permalink: true
   - admonition
   - def_list
