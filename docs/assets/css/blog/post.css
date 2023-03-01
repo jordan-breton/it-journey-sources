@@ -1,3 +1,7 @@
 aside.md-source-file{
 	display: none;
 }
+
+.md-typeset a.current-page{
+	color: rgb(150,150,150);
+}
