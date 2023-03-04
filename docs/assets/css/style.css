@@ -125,6 +125,10 @@
 	margin-right: auto;
 }
 
+.md-post--excerpt img{
+	width: 100%;
+}
+
 @media (max-width: 700px){
 	.md-footer-custom__inner{
 		display: block;

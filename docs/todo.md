@@ -37,8 +37,10 @@ A simple personal reminder for pending ideas & work to be done there.
 - [ ] Home VPS
 - [ ] DNS server for home network
 - [ ] NodeJS, HTTP and Websocket: a love/hate relationship
-- [ ] Real-world VPS setup
+- [ ] 🎶 I'm a poor lonesome dev 🎶
+- [ ] My first project, what a failure!
+- [x] Real-world VPS setup
     * [x] Part 1: Preparation, installation
-    * [ ] Part 2: Configuration
-    * [ ] Part 3: Bonus
-- [ ] Hello world (blog presentation)
+    * [x] Part 2: Configuration
+    * [x] Part 3: Bonus
+- [x] Hello world (blog presentation)

@@ -9,7 +9,7 @@ links:
   - "Part 3: Maintenance & Additional Notes": blog/posts/vps-web-hosting-series-part-3-maintenance-additional-notes.md
 ---
 
-![How to configure a VPS for web hosting?](/assets/images/blog/how-to-configure-a-vps-for-web-hosting/server.jpg)
+![How to configure a VPS for web hosting?](/assets/images/blog/VPS-&-Web-Hosting-series/part-1.jpg)
 
 # VPS & Web Hosting series part 1: Installation
 

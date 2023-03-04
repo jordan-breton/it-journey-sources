@@ -11,7 +11,7 @@ As you may expect at this point, it didn't ended very well, for the project at l
 since it became obvious that they didn't had enough budget to fund this kind of project, and that it was impossible for a junior developer, even with the best efforts,
 to make it alone to the end.
 
-If you want to know more about this story, check this blog article!
+If you want to know more about this story, check [this blog article](/writing)!
 
 ### As a consultant/freelancer
 

@@ -54,7 +54,7 @@ This section regroup skills and knowledge indicators that are related to my dail
 </div>
 
 [^3]:
-Working hard to run my own businesses early in my career while being alone for very long years [was really challenging](/blog).
+Working hard to run my own businesses early in my career while being alone for very long years [was really challenging](/writing).
 But my motivation to stay the course and move forward never wavers, especially in the most difficult moments.
 [^4]:
 As a business owner myself for quite a time, budget management was obviously a mandatory skill to learn.
@@ -211,7 +211,7 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
 
 <div class="center" markdown>
 
-[See a VPS setup example](../blog/posts/vps-web-hosting-series-bare-metal-setup-from-start-to-finish.md){ .md-button .md-button--primary}
+[See a VPS setup example](../blog/posts/vps-web-hosting-series-bare-metal-setup-from-start-to-end.md){ .md-button .md-button--primary}
 
 </div>
 
@@ -232,7 +232,7 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
 
 </div>
 
-[^2]: I already set up several GitHub actions for automatic and manual (one click) deployment from GitHub interface on a company [VPS I configured](/blog), including emergency switches in case of main production server outage.
+[^2]: I already set up several GitHub actions for automatic and manual (one click) deployment from GitHub interface on a company [VPS I configured](../blog/posts/vps-web-hosting-series-bare-metal-setup-from-start-to-end.md), including emergency switches in case of main production server outage.
 
 ### Databases
 
