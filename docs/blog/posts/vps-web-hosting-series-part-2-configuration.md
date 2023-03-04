@@ -13,6 +13,15 @@ links:
 
 # VPS & Web Hosting series part 2: Configuration
 
+In the previous part, we presented the project, installed required packages and even pulled the source
+code of our incredible app **ITRocks** into its own folder.
+
+The thing is... the real work haven't been done yet. Be sure that serious stuff will happen in this second part, so stay
+with me. This is when it starts to be very interesting! Don't worry though... it's not that hard, I promise :smile:
+
+We must configure our tools and our **VPS** to put our app in production. So go grab a cup of warm coffee,
+open a new terminal and follow me into that really exciting phase!
+
 <!-- more -->
 
 !!! warning
@@ -28,7 +37,7 @@ links:
 
 ## Configuration
 
-In this section we will configure `apache2`, `certbot`, `systemctl`, `logrotate`, `iptables` and `itrocks` to get a fully operational production server.
+So... let's start to configure `apache2`, `certbot`, `systemctl`, `logrotate`, `iptables` and `itrocks` to get a fully operational production server.
 
 For security sakes, we will create a specific user and a specific group to restrain our server ability to access the file system:
 
@@ -429,10 +438,6 @@ iptables -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT
 iptables -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
-
-# ITRocks websockets through apache's proxy
-iptables -t filter -A OUTPUT -p tcp --dport 4430 -j ACCEPT
-iptables -t filter -A INPUT -p tcp --dport 4430 -j ACCEPT
 
 # Allow distant mongodb connection
 iptables -t filter -A OUTPUT -p tcp --dport 27017 -j ACCEPT

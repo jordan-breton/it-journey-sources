@@ -211,7 +211,7 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
 
 <div class="center" markdown>
 
-[See a VPS setup example](../blog/posts/how-to-configure-a-vps-for-web-hosting.md){ .md-button .md-button--primary}
+[See a VPS setup example](../blog/posts/vps-web-hosting-series-bare-metal-setup-from-start-to-finish.md){ .md-button .md-button--primary}
 
 </div>
 

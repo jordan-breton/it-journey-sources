@@ -119,6 +119,12 @@
 	margin: 2rem auto;
 }
 
+.gif{
+	max-width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media (max-width: 700px){
 	.md-footer-custom__inner{
 		display: block;

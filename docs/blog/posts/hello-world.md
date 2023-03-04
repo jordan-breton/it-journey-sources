@@ -31,7 +31,7 @@ It helped me realize few things:
    I would have made at least equivalent and most likely worst mistakes **in good faith** and with **good intentions**. All I would have wanted to do, would have been to just share about my passion.
 2. Obviously, those authors are not pretentious (at least most of them), they're just wrong because programming and IT in general is a very complex field in which experience is crucial.
    Some points can only be deeply understood once experimented. In that case, the **need** for the **SOLID principal** is something you can conceive but that most of us will really understand
-   when we'll have to rewrite half our project because not applying at all, or very poorly. Doing so, you'll understand in your bones why it is important, why it must be took very seriously and why it just exists in the first place.
+   when we'll have to rewrite half our project because not applying at all, or very poorly. Doing so, you'll understand in your bones why it is important, why it must be taken very seriously and why it just exists in the first place.
 3. Even today, with my knowledge and my experience, I'm not immune to being wrong or having misunderstood a key concept.
 
 I finally sent my comment after some corrections, thinking afterward that It would have been a better move to write an article about the mistake the author did.
