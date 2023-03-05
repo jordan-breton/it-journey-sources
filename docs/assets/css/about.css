@@ -16,14 +16,6 @@
 	min-width: 350px;
 }
 
-.buttons{
-	text-align: center;
-}
-
-.buttons .md-button{
-	margin: 0.2rem;
-}
-
 @media (max-width: 700px){
 	.presentation{
 		display:block;

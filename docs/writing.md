@@ -1,4 +1,6 @@
-# Sorry, this article have not been published yet!
+# WIP (Writing in progress)
+
+!!! warning "Sorry, this article have not been published yet!"
 
 The link that led you there is not broken. Sometimes, when I'm writing something I think:
 

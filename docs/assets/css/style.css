@@ -125,8 +125,16 @@
 	margin-right: auto;
 }
 
-.md-post--excerpt img{
+.cover{
 	width: 100%;
+}
+
+.buttons{
+	text-align: center;
+}
+
+.buttons .md-button{
+	margin: 0.2rem;
 }
 
 @media (max-width: 700px){

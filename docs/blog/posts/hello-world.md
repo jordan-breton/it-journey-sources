@@ -5,7 +5,7 @@ categories:
   - Personal
 ---
 
-![Hello world cover](/assets/images/blog/hello-world/cover.jpg)
+![Hello world cover](/assets/images/blog/hello-world/cover.jpg){ .cover }
 
 # Hello world!
 

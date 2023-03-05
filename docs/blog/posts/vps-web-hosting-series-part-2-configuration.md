@@ -9,7 +9,7 @@ links:
   - "Part 3: Maintenance & Additional Notes": blog/posts/vps-web-hosting-series-part-3-maintenance-additional-notes.md
 ---
 
-![How to configure a VPS for web hosting?](/assets/images/blog/VPS-&-Web-Hosting-series/part-2.jpg)
+![How to configure a VPS for web hosting?](/assets/images/blog/VPS-&-Web-Hosting-series/part-2.jpg){ .cover }
 
 # VPS & Web Hosting series part 2: Configuration
 
@@ -191,8 +191,59 @@ Not only **ITRocks** is an awesome cutting-edge technology with no rival out the
 too when it comes to security!
 
 As such, there is no sensible configuration information in the git repository. It means that we have to store those configurations
-in a safe place... that will be our `systemd` config. `systemd` configuration files will be created as `root` with `sudo`,
-this way our `itrocks` user will not be able to change them in any way.
+in a safe place... that will be a `conf.env` config file.
+
+### Safe config storage
+
+Let's start by creating a folder and our `conf.env` file in `~/.config`:
+
+```
+mkdir ~/.config/itrocks
+nano ~/.config/itrocks/conf.env
+```
+{ no-linenums }
+
+In the editor, we'll past our configuration:
+
+```ini title="~/.config/itrocks/conf.env"
+HTTP_PORT=7000
+HTTP_INTERFACE=127.0.0.1
+WS_PORT=7001
+WS_INTERFACE=127.0.0.1
+MONGO_DB_HOST=example.mongodb.net
+MONGO_DB_PORT=27017
+MONGO_DB_NAME=itrocks
+MONGO_DB_PATH=DB_PATH="mongodb+srv://itrocks:itrocks@example.mongodb.net/itrocks?retryWrites=true&w=majority"
+```
+
+Type ++ctrl+s++ to save and ++ctrl+x++ to exit.
+
+In order to protect it, we need to set up right permissions:
+
+```bash
+chmod -R 400 ~/.config/itrocks
+```
+{ no-linenums }
+
+Now, the file belongs to the `ubuntu` user and is **readonly**, so the `itrocks` user itself can't
+read it. This way, we ensure that even if an exploit can be used in the **ITRocks** app to try to read/change the `conf.env` file that stores
+sensible data (credentials, api keys, etc.), it won't be able to access it anyway. 
+
+As a reminder, within our configuration, the `itrocks` user will only have access to two things:
+
+- The `/home/ubuntu/ITRocks` folder (recursively) containing sources with **read, write and execute** permissions.
+- The `/home/ubuntu/.nvm` folder (recursively) with only the **execute** permission to be able to run node.
+
+!!! warning "About `/home/ubuntu/ITRocks` permissions"
+
+    Since **ITRocks** is fictive, we don't know what it must be able to do with its own source code.
+    
+    But as a rule of thumb, it should not be able to write. And if it should be able to read/write files,
+    you should provide a working directory path in `conf.env` file, and setup all permissions to this
+    directory somewhere else in the system.
+
+It can work because it's `systemd` that will read this file and provide declared environment 
+variables to the app. It will read it with `root` privileges.
 
 ### Systemctl
 
@@ -236,15 +287,8 @@ PartOf = itrocks.target
 User = itrocks
 Restart = always
 WorkingDirectory = /home/ubuntu/ITRocks
-ExecStart = env HTTP_PORT=7000 \
-                HTTP_INTERFACE=127.0.0.1 \
-                WS_PORT=7001 \
-                WS_INTERFACE=127.0.0.1 \
-                MONGO_DB_HOST=example.mongodb.net \
-                MONGO_DB_PORT=27017 \
-                MONGO_DB_NAME=itrocks \
-                MONGO_DB_PATH=DB_PATH="mongodb+srv://itrocks:itrocks@example.mongodb.net/itrocks?retryWrites=true&w=majority" \
-            /home/ubuntu/.nvm/versions/node/v18.14.2/bin/node index
+EnvironmentFile = /home/ubuntu/.config/itrocks/conf.env
+ExecStart = /home/ubuntu/.nvm/versions/node/v18.14.2/bin/node index
 StandardOutput = append:/var/log/itrocks.%i.instance.log
 StandardError = append:/var/log/itrocks.err.%i.instance.log
 

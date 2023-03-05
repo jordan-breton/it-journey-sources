@@ -102,6 +102,19 @@
 	color: white;
 }
 
+.md-typeset .skills-overview ul{
+	display:grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	list-style-type: none;
+	margin: 0;
+	justify-content: space-around;
+}
+
+.md-typeset .skills-overview ul li{
+	margin:0;
+}
+
 
 @media (max-width: 1000px){
 	.shadow-overlap{

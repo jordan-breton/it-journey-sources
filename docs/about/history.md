@@ -33,7 +33,7 @@ I loved every second of it but in the course of this year, I discovered that wha
 applying my creativity to was programming, that I started to learn out of pure curiosity.
 
 This curiosity promptly transformed into a strong interest, then a passion. At the end of the year, I took the
-decision to overcome my [fear of not being smart enough](/blog) to make a career in IT and applied for a 2 years degree at
+decision to overcome my [fear of not being smart enough](/writing) to make a career in IT and applied for a 2 years degree at
 university.
 
 </div>
@@ -62,7 +62,7 @@ seize this opportunity.
 Following my internship whose main goal was to evaluate and start building a web based ERP tailored to the specific needs of a construction company, I signed
 my first long-term contract to pursue this project.
 
-You should take a look at this obviously predictable failure story [there](/blog). That being said, if I had to go back in time to do it again, I would without hesitation. It was a hard time to get through at this moment,
+You should take a look at this obviously predictable failure story [there](/writing). That being said, if I had to go back in time to do it again, I would without hesitation. It was a hard time to get through at this moment,
 but the lessons I learned from it were priceless.
 
 </div>
@@ -79,7 +79,7 @@ During this period, I completed, enlarged and thorough my skills to grow as full
 and business owner. I did learn management skills as well as negotiation, administrative management, customer relationship,
 marketing and communication.
 
-Take a look at this story [there](/blog).
+Take a look at this story [there](/writing).
 
 </div>
 </div>
@@ -95,7 +95,7 @@ This period is much more technical and allows me to put my hands on very differe
 pieces of software. Working to their extension, maintenance, troubleshooting, documentation and/or replacement is something I'm enjoying a lot.
 
 In the same time, I wrote a [Dark Fantasy book](https://www.amazon.fr/Sang-rancune-Jordan-Breton/dp/2491696002) in French,
-started to build a [NodeJS ecosystem](/projects/current-projects) to try to address several [NPM problems](/blog) and have fun
+started to build a [NodeJS ecosystem](/projects/current-projects) to try to address several [NPM problems](/writing) and have fun
 building something huge and modular from scratch. I even started to learn digital painting as a hobby.
 
 </div>
@@ -109,7 +109,7 @@ Even if I love what I'm doing right now, I kinda start to feel the urge to move 
 amazed by the cyber-security field since I started my IT journey, I'm currently preparing several certifications to finally
 get into this fascinating domain.
 
-Since this step forward is a very important one to me, I made a [certifications roadmap](/about/skill-set#roadmap) and will create
+Since this step forward is a very important one to me, I made a [certifications roadmap](/about/roadmap) and will create
 a [YouTube channel]() about my progression. The main goal being to be better at speaking english, keep motivation to learn the tremendous amount
  of things I have to learn to achieve my objective and share with potentially interested people my experience doing so.
 
