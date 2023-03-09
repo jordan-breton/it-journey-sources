@@ -6,22 +6,6 @@ comments: true
 
 A simple personal reminder for pending ideas & work to be done on this website :)
 
-## Pages
-
-- [ ] Home
-    * [x] Layout & first view
-    * [ ] Content
-- [ ] Projects
-    * [ ] Index
-    * [ ] Current projects
-        * [ ] uws-compat-layer
-    * [ ] Archived projects
-        * [ ] My birth plan
-- [ ] About
-    * [x] History
-    * [ ] Story
-    * [x] Skill set
-
 ## Articles
 
 - [ ] DX
@@ -39,7 +23,6 @@ A simple personal reminder for pending ideas & work to be done on this website :
     * [ ] CSPs
     * [ ] WebRTC
     * [ ] templating system
-- [ ] SSL certificate for dev environment
 - [ ] Home VPS
 - [ ] DNS server for home network
 - [ ] Don't fear to not being smart enough: you'll love working in IT!
@@ -47,11 +30,22 @@ A simple personal reminder for pending ideas & work to be done on this website :
 - [ ] NodeJS, HTTP and Websocket: a love/hate relationship
 - [ ] 🎶 I'm a poor lonesome dev 🎶
 - [ ] My first project, what a failure!
+- [x] SSL certificate for dev environment
 - [x] Real-world VPS setup
     * [x] Part 1: Preparation, installation
     * [x] Part 2: Configuration
     * [x] Part 3: Bonus
 - [x] Hello world (blog presentation)
+
+## Pages
+
+- [x] Home
+    * [x] Layout & first view
+    * [x] Content
+- [x] About
+    * [x] History
+    * [x] Story
+    * [x] Skill set
 
 --------
 
