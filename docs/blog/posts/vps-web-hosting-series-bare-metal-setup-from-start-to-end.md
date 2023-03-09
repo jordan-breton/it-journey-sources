@@ -15,13 +15,13 @@ links:
 # VPS & Web Hosting Series: Bare-metal setup from start to end
 
 Fully configuring a **VPS** by hand when everybody seems to only rely on cloud nowadays? Really? You'd be surprised to find out
-that many compagnies still use **VPSs** or **dedicated servers**, especially when they want to run a non-conventional web application, their own private cloud
+that many companies still use **VPSs** or **dedicated servers**, especially when they want to run a non-conventional web application, their own private cloud
 or even to reduce infrastructure costs. 
 
-And that's not to mention the fact that many cloud provider (like **AWS**) just provide you
+And that's not to mention the fact that many cloud providers (like **AWS**) just provide you
 an instance that is... a **VPS** that still needs to be configured!
 
-In this series of three articles, lets dive into a case study based on several real setups.
+In this series of three articles, let's dive into a case study based on several real setups.
 <!-- more -->
 
 This series have been split in three equivalent episodes: 

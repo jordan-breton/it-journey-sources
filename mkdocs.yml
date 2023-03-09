@@ -1,5 +1,5 @@
 site_name: IT Journey
-site_description: "This website has two purposes: introducing myself and talking about passionating IT related stuff :)"
+site_description: "This website has two purposes: introducing myself and talking about passionating IT-related stuff :)"
 site_author: Jordan Breton
 site_dir: ../generated
 site_url: https://it-journey.tech
@@ -11,15 +11,11 @@ repo_url: 'https://github.com/jordan-breton/it-journey-sources'
 
 nav:
   - Home: 'index.md'
-  - Projects:
-      - 'projects/index.md'
-      - 'Current projects': 'projects/current.md'
-      - 'Archived projects': 'projects/archived.md'
   - About:
       - 'about/index.md'
-      - History: 'about/history.md'
-      - Story: 'about/story.md'
       - Skills: 'about/skill-set.md'
+      - Certifications Roadmap: 'about/roadmap.md'
+      - History: 'about/history.md'
   - Blog:
     - blog/index.md
 
@@ -30,7 +26,7 @@ theme:
   language: 'en'
   custom_dir: overrides
   features:
-    - announce.dismiss
+    #- announce.dismiss
     - content.code.annotate
     - content.code.copy
     - content.code.select

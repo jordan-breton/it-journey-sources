@@ -73,7 +73,7 @@ css:
 
 </div>
 
-As a Web Agency founder, I set up the whole infrastructure including a dedicated server for multi-site (created with a [homemade framework](/projects/archived/bee-color)), and
+As a Web Agency founder, I set up the whole infrastructure including a dedicated server for multi-site (created with a homemade framework), and
 a fully fledged multi-domain mail server, with webmail client, multi-domain webmail admin with quotas, spam & virus filtering, etc.
 
 <div class="center" markdown>

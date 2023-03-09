@@ -3,7 +3,7 @@ css:
   - '/assets/css/skill-set.css'
 ---
 
-## About the following skill set presentation 
+## About The Following Skill Set Presentation 
 
 The following skill set is as exhaustive as possible. The level scale is inspired by the 
 [CEFR (Common European Framework of Reference for Languages)](https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages)
@@ -11,35 +11,35 @@ to offer the most descriptive and simplest way of evaluating each skill.
 
 There is the adapted nomenclature:
 
-| Icon                                                                                                                                                             | Level              | Description                                                                    |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|--------------------------------------------------------------------------------|
-| <span class="lvl lvl1">:material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span> | Beginner           | Barely able to use it for the simplest features                                | 
-| <span class="lvl lvl2">:material-star::material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span>         | Elementary         | Understand basics, philosophy and can do simple things easily                  |
-| <span class="lvl lvl3">:material-star::material-star::material-star::material-star-outline::material-star-outline::material-star-outline:</span>                 | Intermediate       | Sufficient understanding for smooth daily regular work, start to be productive |
-| <span class="lvl lvl4">:material-star::material-star::material-star::material-star::material-star-outline::material-star-outline:</span>                         | Upper intermediate | Start using the most advanced features, medium productivity                    |
-| <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>                                 | Advanced           | Advanced usage, strong experience good productivity                            |
-| <span class="lvl lvl6">:material-star::material-star::material-star::material-star::material-star::material-star:</span>                                         | Expert             | Almost full mastery and deep experience, full productivity                     |
+| Icon                                                                                                                                                             | Level              | Description                                                                     |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|---------------------------------------------------------------------------------|
+| <span class="lvl lvl1">:material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span> | Beginner           | Barely able to use it for the simplest features.                                | 
+| <span class="lvl lvl2">:material-star::material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span>         | Elementary         | Understand basics, philosophy and can do simple things easily.                  |
+| <span class="lvl lvl3">:material-star::material-star::material-star::material-star-outline::material-star-outline::material-star-outline:</span>                 | Intermediate       | Sufficient understanding for smooth regular daily work starts to be productive. |
+| <span class="lvl lvl4">:material-star::material-star::material-star::material-star::material-star-outline::material-star-outline:</span>                         | Upper intermediate | Start using the most advanced features, medium productivity.                    |
+| <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>                                 | Advanced           | Advanced usage, strong experience good productivity.                            |
+| <span class="lvl lvl6">:material-star::material-star::material-star::material-star::material-star::material-star:</span>                                         | Expert             | Almost full mastery and deep experience, full productivity.                     |
 
 !!! warning annotate "Important"
 
     As you read this, keep in mind that learning fast is part of my daily job.
 
     I have a very strong understanding of the web ecosystem as a whole, from networking to web technologies. I know 
-    what's behind main frameworks in web stacks, what problem they do solves (and those they don't), as such I can be operationnal in a matter of days(1)
+    what's behind main frameworks in web stacks, what problem they do solve (and those they don't), as such I can be operational in a matter of days(1)
     on a new framework or technology I don't yet know.
 
-    Being operational meaning reaching the `Elementary` level, and such being able to understand the tool and the code, the philophy behind it and, of course, to work with it.
+    Being operational meaning reaching the `Elementary` level, and such being able to understand the tool and the code, the philosophy behind it and, of course, to work with it.
 
-1.  If a good documentation can be provided. Without any documentation, the delay would either be a week or more depending of the degree of
+1.  If a good documentation can be provided. Without any documentation, the delay would either be a week or more depending on the degree of
    rigor employed while developing said tool.
 
 ----------------------------
 
 ## Meta
 
-This section regroup skills and knowledge indicators that are related to my daily work and/or past missions/businesses. They are not IT specific.
+This section regroups skills and knowledge indicators that are related to my daily work and/or past missions/businesses. They are not IT specific.
 
-### Business & Management skills
+### Business & Management Skills
 
 <div class="grid cards split" markdown>
 
@@ -47,7 +47,7 @@ This section regroup skills and knowledge indicators that are related to my dail
 -   <span markdown>:material-check:{ .lg } **Problem-solving and decision-making** </span> <span class="lvl lvl6">:material-star::material-star::material-star::material-star::material-star::material-star:</span>
 -   <span markdown>:material-chat:{ .lg } **Communication** </span> <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>
 -   <span markdown>:fontawesome-solid-sack-dollar:{ .lg } **Budget Management**[^4] </span> <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>
--   <span markdown>:material-sort:{ .lg } **Organisation**</span> <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>
+-   <span markdown>:material-sort:{ .lg } **Organization**</span> <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>
 -   <span markdown>:material-strategy:{ .lg } **Strategic ressources allocation**[^5]</span> <span class="lvl lvl5">:material-star::material-star::material-star::material-star::material-star::material-star-outline:</span>
 -   <span markdown>:material-calendar:{ .lg } **Planning & estimation**[^6]</span> <span class="lvl lvl4">:material-star::material-star::material-star::material-star::material-star-outline::material-star-outline:</span>
 
@@ -59,14 +59,14 @@ But my motivation to stay the course and move forward never wavers, especially i
 [^4]:
 As a business owner myself for quite a time, budget management was obviously a mandatory skill to learn.
 [^5]:
-As a lonely developer with very few resources and a small-to-inexistant network when I started my IT-Journey, I had to deal with incredibly very limited time, money and skills.
-Dealing with this kind of restrictions strengthened my abilities to prioritize and delay where needed.
+As a lonely developer with very few resources and a small-to-inexistent network when I started my IT-Journey, I had to deal with incredibly very limited time, money and skills.
+Dealing with these kinds of restrictions strengthened my abilities to prioritize and delay where needed.
 [^6]:
-My time estimates improved greatly over years but let's be honest, there is still room for improvement :smile:.
-No matter how much I try to stop underestimate the time needed to do something, my optimistic nature just keep to stay in the way.
+My time estimates improved greatly over the years but let's be honest, there is still room for improvement :smile:.
+No matter how much I try to stop underestimate the time needed to do something, my optimistic nature just keep staying in the way.
 This is one of those domains where time and practice are the only way to mastery.
 
-### Soft skills
+### Soft Skills
 
 <div class="grid cards" markdown>
 
@@ -75,10 +75,10 @@ This is one of those domains where time and practice are the only way to mastery
      ---
 
      Being able to work together with the same goal in mind and a strong cohesion sense is crucial to
-     succeed as a developer. But it's even more important when it comes to build something.
+     succeed as a developer. But it's even more important when it comes to building something.
 
      I'm naturally open to others, friendly and eager to share whether it be about the projects I'm working on
-     or just every IT related (or not) subjects.
+     or just every IT-related (or not) subjects.
 
 -    :material-puzzle-edit:{ .lg }  **Adaptability**
 
@@ -89,13 +89,13 @@ This is one of those domains where time and practice are the only way to mastery
 
      Not only am I adapting to your project, team and processes, but I'll do my best for my code to be
      as close as possible as the codebase I'm working on. Codebase homogeneity is one of the most important
-     things to maintain accros a project's lifecycle.
+     things to maintain across a project's lifecycle.
 
 -    :material-creation:{ .lg } **Creativity**
 
      ---
 
-     Creativity is such a fascinating thing. Some people refers to it as a gift. I strongly disagree.
+     Creativity is such a fascinating thing. Some people refer to it as a gift. I strongly disagree.
      I rather see creativity as a muscle: the more we invest time and effort to create new things, the most creative we become.
 
      Being creative is an **active process**. We're not creating many things *because we're creative*. We're creative
@@ -105,10 +105,10 @@ This is one of those domains where time and practice are the only way to mastery
 
      ---
 
-     My work is not about knowing or memorizing everything, but rather knowing were to search for, keeping my knowledge up to date
+     My work is not about knowing or memorizing everything, but rather knowing where to search for, keeping my knowledge up to date
      and reading/listening/watching as much as possible about as different non-related subjects as possible.
 
-     This way, I can dig and thorough a subject later, when I think that it maybe useful for my current task, mission or project.
+     This way, I can dig and thorough a subject later, when I think that it may be useful for my current task, mission or project.
 
 -    :material-lightning-bolt:{ .lg }  **Critical thinking**
 
@@ -118,13 +118,13 @@ This is one of those domains where time and practice are the only way to mastery
      to ask myself: How would **I** solve the problems it solves?
 
      Implementing a proof of concept before using a library/a framework feature is something I do a lot. It not only help me improve
-     my skills overtime, but it help me spot my solutions strengths and weaknesses.
+     my skills overtime, but it helps me spot my solutions strengths and weaknesses.
 
 -    :fontawesome-solid-hand-peace:{ .lg } **Openness to criticism**
 
      ---
 
-     Writing code is not just about applying technical knowledge. It's about solving problem in a creative way. The *creative way*
+     Writing code is not just about applying technical knowledge. It's about solving problems in a creative way. The *creative way*
      part is such a subjective thing that not being able to keep a certain distance with our code may poison our developer career.
 
      I don't see criticism has something against me, but as something that is helping me being better at what I do. As such, substantiate critics are always welcome.
@@ -134,7 +134,7 @@ This is one of those domains where time and practice are the only way to mastery
 
 ----------------------------
 
-## Technical skills
+## Technical Skills
 
 ### Concepts
 
@@ -170,7 +170,7 @@ This is one of those domains where time and practice are the only way to mastery
 
 </div>
 
-#### JavaScript runtimes
+#### JavaScript Runtimes
 
 <div class="grid cards split" markdown>
 
@@ -179,7 +179,7 @@ This is one of those domains where time and practice are the only way to mastery
 
 </div>
 
-### Web technologies
+### Web Technologies
 
 <div class="grid cards split" markdown>
 
@@ -195,7 +195,7 @@ This is one of those domains where time and practice are the only way to mastery
 
 </div>
 
-### System administration
+### System Administration
 
 <div class="grid cards split" markdown>
 
@@ -206,8 +206,8 @@ This is one of those domains where time and practice are the only way to mastery
 
 </div>
 
-As a Web Agency founder, I set up the whole infrastructure including a dedicated server for multi-site (created with a [homemade framework](/projects/archived/bee-color)), and
-a fully fledged multi-domain mail server, with webmail client, multi-domain webmail admin with quotas, spam & virus filtering, etc.
+As a Web Agency founder, I set up the whole infrastructure including a dedicated server for a multi-site (created with a homemade framework), and
+a fully fledged multi-domain mail server, with web mail client, multi-domain web mail admin with quotas, spam & virus filtering, etc.
 
 <div class="center" markdown>
 
@@ -232,7 +232,7 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
 
 </div>
 
-[^2]: I already set up several GitHub actions for automatic and manual (one click) deployment from GitHub interface on a company [VPS I configured](../blog/posts/vps-web-hosting-series-bare-metal-setup-from-start-to-end.md), including emergency switches in case of main production server outage.
+[^2]: I already set up several GitHub actions for automatic and manual (one click) deployments from GitHub interface on a company [VPS I configured](../blog/posts/vps-web-hosting-series-bare-metal-setup-from-start-to-end.md), including emergency switches in case of outage one the main production server.
 
 ### Databases
 
@@ -261,8 +261,8 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
 
     My everyday work being for a long time to work on from-scratch projects without known frameworks, I must admit that it's not this page's most impressive section :sweat_smile:. 
 
-    But it doesn't mean I'm unable to work with them in no time. I had to slightly deal with them over years, and my ability to enter and work on non-standard projects would allow me to work with those frameworks/CMSs 
-    without requiring too much efforts, especially since they benefits from a tremendous ammount of online resources and very well written and thorough documentations.
+    But it doesn't mean I'm unable to work with them in no time. I had to slightly deal with them over the years, and my ability to enter and work on non-standard projects would allow me to work with those frameworks/CMSs 
+    without requiring too much effort, especially since they benefit from a tremendous amount of online resources and very well written and thorough documentation.
 
 ### Cloud services
 
@@ -284,7 +284,7 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
 
 !!! note 
 
-    Most usages are integration into websites/application, mostly on **NodeJS** for login and/or file upload/retrieval.
+    Most usages are integration into websites/applications, mostly on **NodeJS** for login and/or file upload/retrieval.
     
     The only real cloud configuration done on AWS for my part is an AWS Nano deployment to deliver a [spectre instance](https://gitlab.com/spectre.app/web/) at [spectre.jordan-breton.com](https://spectre.jordan-breton.com/)
     for my own usage.
@@ -292,17 +292,17 @@ a fully fledged multi-domain mail server, with webmail client, multi-domain webm
     More generally, working with any cloud/service providers either with their UI and/or through their APIs is not that hard and
     only requires to be able to read their documentation **most of the time**. 
 
-    That being said, being a Cloud Engineer is not trivial at all, especially when it comes to work with the most famous providers.
+    That being said, being a Cloud Engineer is not trivial at all, especially when it comes to working with the most famous providers.
     
     I [plan to apply for cloud formations to get certified](/about/certification-roadmap) for Azure and AWS as soon as possible, since I love their services and
-    and staying up to date.
+    staying up to date.
 
-    The thing is... days are only 32 hours long, aren'they?
+    The thing is... days are only 32 hours long, aren't they?
 
 -------------------------------------
 
 
-## Non-IT skills
+## Non-IT Skills
 
 <div class="grid split cards" markdown>
 

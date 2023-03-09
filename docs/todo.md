@@ -24,6 +24,8 @@ A simple personal reminder for pending ideas & work to be done on this website :
 
 ## Articles
 
+- [ ] DX
+- [ ] What is code (and why AI's are not that much a big deal (very complex compilers?))
 - [ ] Git branching model
 - [ ] Mkdocs + material theme
     * [ ] Contact form api + component

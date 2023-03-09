@@ -14,12 +14,12 @@ css:
 <div class="content" markdown>
 My name is Jordan Breton.
 
-I'm a Fullstack Web Developer since 2015 and I'm offering **freelancing** and **consulting** for various individuals and small-to-medium-sized companies.
+I'm a **full-stack** Web Developer since 2015 and I'm a **freelance** and a **consultant** for various individuals and small-to-medium-sized companies.
 
-**I fear no project**. No matter what technologies yours was built upon, no matter if it is a well known and shiny well-documented stack or an obscur uncommented homemade
+**I fear no project**. No matter what technologies yours was built upon, no matter if it is a well known and shiny well-documented stack or an obscure uncommented homemade
 system. Code is code. IT is IT.
 
-I'm a passionated developer, and I strongly believe in what **John Heywood** said: 
+I'm a passionate developer, and I strongly believe in what **John Heywood** said: 
 
 > Nothing is impossible to a willing heart.
 
@@ -28,12 +28,13 @@ I'm a passionated developer, and I strongly believe in what **John Heywood** sai
 
 <div class="buttons" markdown>
 
-[Projects](/projects){.md-button .md-button--primary}
+[Skill set](/about/skill-set){.md-button .md-button--primary}
+[Blog](/blog){.md-button .md-button--primary}
 [History](/about/history){.md-button} 
-[Skill set](/about/skill-set){.md-button}
 
 </div>
 
+--8<-- "job-opportunities.md"
 
 ### Contact
 
@@ -43,7 +44,7 @@ I'm a passionated developer, and I strongly believe in what **John Heywood** sai
 
      ---
 
-     If you want us to work together or would want to hire me for short or long term contract, 
+     If you want us to work together or would want to hire me for short or long-term contract, 
      just email me and I'll give you an answer in 48h.
 
      :material-arrow-right:{.lg .middle} [contact@jordan-breton.com](mailto:contact@jordan-breton.com)
@@ -52,7 +53,7 @@ I'm a passionated developer, and I strongly believe in what **John Heywood** sai
 
      ---
 
-     Do not hesitate to follow me on LinkedIn if you're interested by my content or if you want us to
+     Do not hesitate to follow me on LinkedIn if you're interested in my content or if you want us to
      collaborate on content creation, cross promotion or on one of your projects.
 
      :material-arrow-right:{.lg .middle} [My LinkedIn profile](https://www.linkedin.com/in/jordan-breton-281088267/){ target="_blank" }
@@ -71,14 +72,14 @@ I'm a passionated developer, and I strongly believe in what **John Heywood** sai
 !!! note
 
     Social networks are not my cup of tea, but I do like to create content and discover new things. If you think
-    your own work may interest me, don't hesitate to engage a conversation :wink:
+    your own work may interest me, don't hesitate to engage in a conversation :wink:
 
 ## The website
 
 **It Journey** has three main purposes:
 
-- Being a starting point to my career shift toward cyber-security
-- Sharing my knowledge and my journey as a fullstack web developer
-- Introducing myself to all of those who would want to work with me in a way or another
+- Being a starting point to my **career inflection** toward **cybersecurity**.
+- Sharing my knowledge and my journey as a **full-stack web developer**.
+- Introducing myself to all of those who would want to work with me in a way or another.
 
 If you want more details about the genesis of this website, check the [first blog article](/blog/2023/02/21/hello-world) that explains this in more details :wink:

@@ -22,10 +22,7 @@ Have you ever heard about Root Certificates? It makes our lives better :wink:
 
 <!-- more -->
 
-In dev environments for example, using self-signed certificates is mandatory to play with WebRTC features,
-`Access-Control` headers and soo one.
-
-This section will try to cover basics about setting up SSL root certificate and per-site certificates.
+!!! warning "This tutorial is easy and quick to follow, but it assumes that you're generating your certificates in a **Linux** environment. Please adapt your **OpenSSL** usage if you work on another system." 
 
 ### Generating a Root Certificate
 
@@ -40,6 +37,7 @@ cd ~/SSLConfig/cert/CA
 openssl genrsa -out CA.key -des3 2048
 openssl req -x509 -sha256 -new -nodes -days 3650 -key CA.key -out CA.pem
 ```
+{ no-linenums }
 
 Now, you'll be able to generate as many certificates as you want, and you will just have to add your `CA.crt` to trusted CA lists to any device/browser
 you want to be able to access to your services.
@@ -51,6 +49,7 @@ you want to be able to access to your services.
     sudo cp ~/SSLConfig/cert/CA/CA.crt /usr/local/share/ca-certificates
     sudo update-ca-certificates
     ```
+    { no-linenums }
 
 
 ### Generating a certificate
@@ -62,21 +61,21 @@ website :
 mkdir demo.dev.local
 cd ./demo.dev.local
 ```
+{ no-linenums }
 
 Then, let's create an `ext` file used to create our certificate :
 
-=== "demo.dev.local.ext"
+``` hl_lines="7 8" title="demo.dev.local.ext"
+authorityKeyIdentifier = keyid,issuer
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
 
-    ``` hl_lines="7 8"
-    authorityKeyIdentifier = keyid,issuer
-    basicConstraints = CA:FALSE
-    keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-    subjectAltName = @alt_names
-    
-    [alt_names]
-    DNS.1 = demo.dev.local
-    IP.1 = 192.168.1.14
-    ```
+[alt_names]
+DNS.1 = demo.dev.local
+IP.1 = 192.168.1.14
+```
+{ no-linenums }
 
 !!! note
 
@@ -94,20 +93,18 @@ openssl x509 -req -in demo.dev.local.csr \
         -out demo.dev.local.crt
 openssl rsa -in demo.dev.local.key -out demo.dev.local.decrypted.key
 ```
+{ no-linenums }
 
-!!! warning
+!!! danger
 
     When generating your certificates, you will be printed some questions about certificate 
     (Common Name, Organisation infos, mail, etc.).
 
-    The CN (Common Name) must be **UNIQUE** for **EACH** certificate, including the root **CA**. 
-    If not, NodeJS will reject your certificates and mark them as `self-signed`
-    as described [here](https://stackoverflow.com/questions/68896243).
+    The CN (Common Name) must be **^^UNIQUE^^** for **^^EACH^^** certificate, including the root **CA**. 
+    If not, **NodeJS** will reject your certificates and mark them as `self-signed`
+    as described [here](https://stackoverflow.com/questions/68896243){ target="_blank" }.
 
 Now, you should have this folder structure :
-
-
-<div disable-linenums></div>
 
 ``` bash
 ~/SSLConfig
@@ -123,6 +120,7 @@ Now, you should have this folder structure :
             ├── demo.dev.local.ext # The config file.
             └── demo.dev.local.key # The certificate key.
 ```
+{ no-linenums }
 
 !!! example "Configuring the apache2 proxy with our certificate"
 
@@ -143,4 +141,6 @@ Now, you should have this folder structure :
     ```
 
 To be able to use any of your certificates in a browser, you must [install the root certificate](#generating-a-root-certificate)
-into your browser / system / smartphone, and all the generated certificates signed with this CA will be trusted too.
+into your browser / system / smartphone, and **all the generated certificates signed with this CA will be trusted too.**
+
+Didn't I tell you that **Root Certificates** are our best friends? :wink:

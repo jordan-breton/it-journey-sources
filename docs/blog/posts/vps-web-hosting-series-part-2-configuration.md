@@ -16,8 +16,8 @@ links:
 In the previous part, we presented the project, installed required packages and even pulled the source
 code of our incredible app **ITRocks** into its own folder.
 
-The thing is... the real work haven't been done yet. Be sure that serious stuff will happen in this second part, so stay
-with me. This is when it starts to be very interesting! Don't worry though... it's not that hard, I promise :smile:
+The thing is... the real work hasn't been done yet. Be sure that serious stuff will happen in this second part, so stay
+with me. This is when it starts to be very interesting! Don't worry, though... it's not that hard, I promise :smile:
 
 We must configure our tools and our **VPS** to put our app in production. So go grab a cup of warm coffee,
 open a new terminal and follow me into that really exciting phase!
@@ -47,7 +47,7 @@ sudo useradd itrocks -g itrocks
 ```
 { no-linenums }
 
-Some permissions must be setup for `itrocks` to be able to access the folder and run node:
+Some permissions must be set up for `itrocks` to be able to access the folder and run `node`:
 
 ```bash
 cd ~
@@ -58,16 +58,16 @@ chmod o+x -R .nvm
 
 ??? question "Wait! `o+x`? Isn't it insecure?"
 
-    The `o` permission is for `others` and means litteraly all the operating system users will be able to `execute`
+    The `o` permission is for `others` and means literally all the operating system users will be able to `execute`
     a folder or a file.
 
-    `nvm` installs a NodeJS version in the current user home directory. It don't install it globaly for all users.
-    One of the easiest thing to do to make that node version available for everyone is to give everyone the permission to execute it.
+    `nvm` installs a NodeJS version in the current user home directory. It doesn't install it globally for all users.
+    One of the easiest things to do to make that node version available for everyone is to give everyone the permission to execute it.
 
     But why? Why do we want other users to be able to run NodeJS?
 
-    For our `itrocks` user. This user do not need any home directory, and we want him to only have access to the `/home/ubuntu/ITRocks` directory
-    and to be able to start the server with the `node` command. Note that it have no read/write permissions in `/home/ubuntu/.nvm`,
+    For our `itrocks` user. This user doesn't need any home directory, and we want him to only have access to the `/home/ubuntu/ITRocks` directory
+    and to be able to start the server with the `node` command. Note that it has no read/write permissions in `/home/ubuntu/.nvm`,
     only `execute`.
 
 !!! warning "If you later install a new version of node using nvm, don't forget to add the `o+x` permission to the newly installed NodeJS version!"
@@ -81,7 +81,7 @@ sudo usermod -aG itrocks ubuntu
 
 !!! warning "Before continuing, you ^^MUST^^ run the `exit` command and reconnect through SSH for this change to take effects."
 
-For git to automatically setup right permissions/ownership to all files when we pull/checkout, let's create a script in `/home/ubuntu/tools`:
+For git to automatically set up right permissions/ownership to all files when we pull/checkout, let's create a script in `/home/ubuntu/tools`:
 
 ```bash
 cd ~
@@ -117,7 +117,7 @@ ln -s /home/ubuntu/tools/gitHook.sh /home/ubuntu/ITRocks/.git/hooks/post-merge
 ```
 { no-linenums }
 
-Test it by checkout to the main branch and checkout back to the release branch, then use `ls` to check all files and folders belongs to the `itrocks` group:
+Test it by checkout to the `main` branch and checkout back to the `release` branch, then use `ls` to check all files and folders belongs to the `itrocks` group:
 
 ```bash
 cd ITRocks
@@ -172,7 +172,7 @@ Then, we will create the file `/etc/apache2/sites-available/app.itrocks.com.conf
 </VirtualHost>
 ```
 
-!!! important "For now, SSL related config is ignored, certbot will edit this file for us. We just need to provide him a working config on an insecure VirtualHost."
+!!! warning "For now, SSL-related config is ignored, Certbot will edit this file for us. We just need to provide him a working config on an insecure VirtualHost."
 
 Now we want to enable our website:
 
@@ -182,7 +182,7 @@ sudo systemctl reload apache2
 ```
 { no-linenums }
 
-But before running certbot, we need a running server.
+But before running Certbot, we need a running server.
 
 
 ### ITRocks
@@ -190,7 +190,7 @@ But before running certbot, we need a running server.
 Not only **ITRocks** is an awesome cutting-edge technology with no rival out there, but it follows best practices
 too when it comes to security!
 
-As such, there is no sensible configuration information in the git repository. It means that we have to store those configurations
+As such, there is no sensitive configuration information in the git repository. It means that we have to store those configurations
 in a safe place... that will be a `conf.env` config file.
 
 ### Safe config storage
@@ -203,7 +203,7 @@ nano ~/.config/itrocks/conf.env
 ```
 { no-linenums }
 
-In the editor, we'll past our configuration:
+In the editor, we'll paste our configuration:
 
 ```ini title="~/.config/itrocks/conf.env"
 HTTP_PORT=7000
@@ -225,9 +225,9 @@ chmod -R 400 ~/.config/itrocks
 ```
 { no-linenums }
 
-Now, the file belongs to the `ubuntu` user and is **readonly**, so the `itrocks` user itself can't
+Now, the file belongs to the `ubuntu` user and is **read only**, so the `itrocks` user itself can't
 read it. This way, we ensure that even if an exploit can be used in the **ITRocks** app to try to read/change the `conf.env` file that stores
-sensible data (credentials, api keys, etc.), it won't be able to access it anyway. 
+sensitive data (credentials, api keys, etc.), it won't be able to access it anyway. 
 
 As a reminder, within our configuration, the `itrocks` user will only have access to two things:
 
@@ -239,7 +239,7 @@ As a reminder, within our configuration, the `itrocks` user will only have acces
     Since **ITRocks** is fictive, we don't know what it must be able to do with its own source code.
     
     But as a rule of thumb, it should not be able to write. And if it should be able to read/write files,
-    you should provide a working directory path in `conf.env` file, and setup all permissions to this
+    you should provide a working directory path in `conf.env` file, and set up all permissions to this
     directory somewhere else in the system.
 
 It can work because it's `systemd` that will read this file and provide declared environment 
@@ -249,23 +249,24 @@ variables to the app. It will read it with `root` privileges.
 
 This is a service manager used to manage the lifecycle of our `itrocks` instance. We will create two files in `/etc/systemd/system/`:
 
-- `itrocks@.service`: a templated unit that will allow us, later, to run multiple instances of **ITRocks** on the same server. When we would need to horizontally scale later.
-- `itrocks.target`: the service unit that will decide how much instances to run at a time and manage them for us. Systemd will ensure **ITRocks** is running from server startup to server shutdown and relaunch it if it crashes.
+- `itrocks@.service`: a template unit that will allow us, later, to run multiple instances of **ITRocks** on the same server. When we would need to horizontally scale later.
+- `itrocks.target`: the service unit that will decide how much instances to run at a time and manage them for us. Systemd will ensure **ITRocks** is running from the server startup to the server shutdown and relaunch it if it crashes.
 
 ??? question "Why not using `PM2` or `nodemon` instead ?"
 
     Some people like to use something like [PM2](https://pm2.keymetrics.io/) or [Nodemon](https://nodemon.io/) to *daemonize* a NodeJS application.
     But I'll not stand with them, because I do find them useless. Since we still need
     some init system to make sure they start on boot and restart if they crash. And that's without saying that any init system shipped
-    with any linux distro will give you as many (if not more) features than those NodeJS based process managers.
+    with any Linux distro will give you as many (if not more) features than those **NodeJS** based process managers.
     
-    IMHO, they are a useless additional layer that we should get ride off in a vast majority of use-cases :wink: Keeping our (already) huge tech stacks as tiny as possible is probably one of the most underrated effort in our field nowadays.
+    IMHO, they are a useless additional layer that we should get ride off in a vast majority of use-cases :wink: Keeping our (already) huge
+    tech stacks as tiny as possible is probably one of the most underrated efforts in our field nowadays (at least for Web Development).
 
     That was my 2 cents about it.
 
 Let's start by `/etc/systemd/system/itrocks@.service`.
 
-We will need to know the path to the node binaries:
+We will need to know the path to the `node` binaries:
 
 ```bash
 which node
@@ -378,7 +379,7 @@ Type the maintainer's mail address, select all domains and accepts terms and con
 
 Once certbot executed, we must edit the SSL config to ensure our websockets will be proxied too.
 
-In our case, the apache file was `/etc/apache2/sites-available/app.itrocks.com.conf`, so certbot will generate a file named `/etc/apache2/sites-available/app.itrocks.com.conf-le-ssl.conf`:
+In our case, the apache file was `/etc/apache2/sites-available/app.itrocks.com.conf`, so Certbot will generate a file named `/etc/apache2/sites-available/app.itrocks.com.conf-le-ssl.conf`:
 
 ```
 sudo nano /etc/apache2/sites-available/app.itrocks.com.conf-le-ssl.conf
@@ -471,7 +472,7 @@ iptables -t filter -A OUTPUT -p icmp -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -t filter -A OUTPUT -p tcp --dport 22 -j ACCEPT
 
-# DNS (bind) needed by apt-get to update packages
+# DNS
 iptables -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT
 iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 53 -j ACCEPT
@@ -495,14 +496,14 @@ iptables -t filter -A INPUT -p tcp --dport 465 -j ACCEPT
 !!! danger 
 
     Modifying this file may **lock you out the server**, as well as using some `iptables` command like `iptables flush`.
-    Since by default the policy is to reject all, if you flush all configuration, the server will reject everything the 
+    Since by default the policy is to reject all, if you flush all configurations, the server will reject everything the 
     **instant** the command is executed, cutting your SSH connection too. 
 
     This is still temporary at this step, because those changes only happen in memory. If you mess it up,
     restart the server by using your provider's admin panel. 
 
-    If restart doesn't works because the restart command sent by your provider use a blocked 
-    port, you'll need to rely on your provider support, or on emergency or recovery procedure he planned.
+    If restart doesn't work because the restart command sent by your provider use a blocked 
+    port, you'll need to rely on your provider support, or on an emergency or recovery procedure he planned.
 
 Then, type ++ctrl+s++ to save and ++ctrl+x++ to exit.
 
@@ -519,8 +520,8 @@ sudo ./iptables.config.sh
     Before persisting those rules in the next step, it is very important to test that everything is working fine:
 
     1. Exit and reconnect in `SSH` to ensure it is still possible
-    2. Try to reach itrocks and make it send a mail to one of your addresses (ensure that you receive it)
-    3. Login to itrocks and check that your websocket is successfully connected.
+    2. Try to reach **ITRocks** and make it send an email to one of your addresses (ensure that you receive it)
+    3. Login to **ITRocks** and check that your websocket is successfully connected.
     4. Try to run `sudo apt-get update` and `sudo apt-get upgrade` to ensure that the firewall rules do not prevent those commands to execute.
 
 Once all is ok, we can persist `iptables` configuration:
@@ -570,7 +571,8 @@ sudo systemctl start netfilter-persistent.service
 
 ### Fail2ban
 
-Fail2ban is a tool to prevent intrusions by watching different services logs. We will use it to watch `apache` logs and to protect our `SSH` from brute force attacks.
+Fail2ban is a tool to prevent intrusions by watching different services logs. We will use it to watch `apache` logs and
+to protect our `SSH` from brute force attacks.
 
 We must start by enabling it:
 
@@ -587,7 +589,7 @@ sudo nano /etc/fail2ban/jail.local
 ```
 { no-linenums }
 
-Starts by uncommenting the following lines (to find them quickly type `ctrl` + `w`, then type the string you search, then type `enter`):
+Starts by uncommenting the following lines (to find them quickly type ++ctrl+w++, then type the string you search, then type ++enter++):
 
 - `bantime.increment = true`
 - `bantime.multipliers = 1 2 4 8 16 32 64`
@@ -643,4 +645,4 @@ sudo systemctl restart fail2ban
 { no-linenums }
 
 Now that our server is fully configured, we need to have a talk about [maintenance and additional notes, tips and advices](/blog/2023/03/01/vps-web-hosting-series-part-3-maintenance-additional-notes/)
-in the third and last part fo this series :smile:
+in the third and last part for this series :smile:

@@ -15,9 +15,9 @@ links:
 
 Fully configuring a VPS is not that hard nor that long, but when we start our IT journey it's an intimidating task.
 
-Today, we'll configure one from scratch (and for fun :wink:). Lets dream about a **NodeJS** application that must connect
+Today, we'll configure one from scratch (and for fun :wink:). Let's dream about a **NodeJS** application that must connect
 to a **MongoDB** instance hosted somewhere else. To spice-it up a little, our fictive project called **IT Rocks** is both
-an **HTTP** server and a **WebSocket** server. It must be able to send mails to our customers too.
+an **HTTP** server and a **WebSocket** server. It must be able to send emails to our customers too.
 
 And... since it's a very serious project, it needs to be accessible within restrictive networks as well. Why? Because... what would be 
 an IT task without a tricky part?
@@ -30,13 +30,13 @@ an IT task without a tricky part?
     
     1. This is inspired by several real-world scenarios I encountered in the past few years
     2. This tutorial is an **advanced** one.
-    3. I tried my best to write it in a way that **should** allow a beginner to not be lost and reproduce every step without struggling too much
+    3. I tried my best to write it in a way that **should** allow a beginner not to be lost and reproduce every step without struggling too much
     4. This is not only once of those **How to?** article you may be used to read, it's also a **Why?** article. It means that I tried to justify why some 
        decisions have been taken for you to understand that tools and choices are not default ones. They have been thought to fit the project's requirements.
     
     As a consequence, despite my efforts to make it as short and digest as possible, it is quite long and detailed. But so are all real-case IT scenarios we encounter in our jobs.
 
-    If you're a beginner, you should find here some valuable informations and resources that are not that easy to find and compile by yourself. But it comes at a cost:
+    If you're a beginner, you should find here some valuable information and resources that are not that easy to find and compile by yourself. But it comes at a cost:
     you'll have to invest some time and efforts to understand everything. If something is unclear or if you have a question... just leave a comment :)
 
 This is the first part of a series:
@@ -57,7 +57,7 @@ To sum up the needs defined in the intro and for clarity sakes, there are the re
 - WebSocket server with [uWebSocket.js](https://github.com/uNetworking/uWebSockets.js/){ target="_blank" }
 - Sends mails
 - Connects to distant **MongoDB** database service.
-- Accessible in **restrictive networks** (entreprise, schools, etc.)
+- Accessible in **restrictive networks** (enterprise, schools, etc.)
 - The project sources are hosted in a Github **private** repository, with two branches:
     - `main`
     - `release` (the one we want to use on the VPS)
@@ -65,10 +65,10 @@ To sum up the needs defined in the intro and for clarity sakes, there are the re
 ??? note "About *express* and *uWebSocket.js*"
 
     This is not as uncommon as it seems to encounter a scenario like this. You can read more about *express* and *uWebSocket.js*
-    configuration pitfalls [there](/writing), but to not make this tutorial too long, I'll sum it up in one sentance:
+    configuration pitfalls [there](/writing), but not to make this tutorial too long, I'll sum it up in one sentence:
 
     **Express** and **uWebSocket.js** are **incompatible**. It means that **ITRocks** **needs** two open ports. It's important
-    because of the *"accesible in restrctive networks"* requirement.
+    because of the *"accessible in restrictive networks"* requirement.
 
 Now, it's time to roll up our sleeves and start typing on our beautiful keyboard :wink:
 
@@ -77,13 +77,13 @@ Now, it's time to roll up our sleeves and start typing on our beautiful keyboard
 The first thing to do is obviously to connect to our VPS to install the tools we need.
 
 We ordered our **VPS** few minutes ago, and since our provider is as fast and efficient as our beautiful application,
-we already received a mail with the following information:
+we already received an email with the following information:
 
 <div class="annotate" markdown>
 
 > Dear customer,
 >
-> `Ubuntu 20.04` operating system have been installed on the VPS you ordered:
+> `Ubuntu 20.04` operating system has been installed on the VPS you ordered:
 >
 > - IPv4 address: `156.225.137.143` (1)
 > - VPS name: `ac78ef7.vps.provider.com` (2)
@@ -120,7 +120,7 @@ Then type the server password.
 
 ### Securing SSH connection to the VPS
 
-Once logged in, we **must** start by **changing the admin password**, since it have been provided in cleartext by mail,
+Once logged in, we **must** start by **changing the admin password**, since it has been provided in cleartext by mail,
 its security maybe compromised already, or maybe compromised later.
 
 ```bash
@@ -129,10 +129,10 @@ sudo passwd ubuntu
 { no-linenums }
 
 Now, the first thing we want to do is disabling **SSH** password login to prefer a **private key** secured by **a passphrase**.
-This reduces risks of successfully bruteforce attack to 0. And your SSH login should remain secure as long as the machine you keep
+This reduces risks of a successful brute-force attack to 0. And your SSH login should remain secure as long as the machine you keep
 this private key on stays secure too.
 
-!!! warning "For the whole tutorial, I'll assume that you're operating form an ubuntu local machine. If it is not the case, please adapt local commands to your operating system."
+!!! warning "For the whole tutorial, I'll assume that you're operating from an ubuntu local machine. If it is not the case, please adapt local commands to your operating system."
 
 ```bash title="On local machine"
 # generate a new key pair (1)
@@ -150,8 +150,8 @@ Then, try to connect to your **VPS** with the command `ssh ubuntu@156.225.137.14
 **passphrase** you chose while generating the certificates, but if the operation was successful, the **SSH** client will not ask you the `ubuntu`
 password.
 
-Now, we want to prevent anyone to access the server with any password, to enforce keys usage, as well as forbid entirely root login. 
-Lets create a new ssh config file:
+Now, we want to prevent anyone from accessing the server with any password, to enforce keys usage, as well as forbid entirely root login. 
+Let's create a new ssh config file:
 
 ```bash
 sudo nano /etc/ssh/sshd_config.d/disable-password-authentication.conf
@@ -198,7 +198,7 @@ Must print `Permission denied (publickey).` too.
 
 ### Upgrading ubuntu & setting up automatic upgrades
 
-Now that we successfully secured **SSH** access to our **VPS**, lets login again to upgrade *ubuntu*:
+Now that we successfully secured **SSH** access to our **VPS**, let's login once more to upgrade *ubuntu*:
 
 ```bash
 ssh ubuntu@156.225.137.143
@@ -227,14 +227,14 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 { no-linenums }
 
-Just choose `yes` and press enter.
+Just choose `yes` and press ++enter++.
 
-We **do not** turn on automatic reboot, because we may want to reboot at a specific point in time. ITRocks may want
+We **do not** turn on automatic reboot, because we may want to reboot at a specific point in time. **ITRocks** may want
 to schedule a maintenance downtime, for example.
 
 ### Installing needed packages
 
-Let's install what we need to run **IT Rocks** behind an apache proxy:
+Let's install what we need to run **IT Rocks** behind an Apache proxy:
 
 ```bash
 sudo apt-get install -y apache2 npm certbot python3-certbot-apache fail2ban iptables-persistent
@@ -249,22 +249,22 @@ sudo apt-get install -y apache2 npm certbot python3-certbot-apache fail2ban ipta
     
     | package                  | description                                                                                                   |
     |--------------------------|---------------------------------------------------------------------------------------------------------------|
-    | `apache2`                | An HTTP server and will be our proxy. It could have been `NGinx` or `Caddy` too for example.                  |
+    | `apache2`                | An HTTP server and will be our proxy. It could have been `NGinx` or `Caddy` too, for example.                 |
     | `npm`                    | The NodeJS Package Manager, needed to fetch our project's dependencies.                                       |
-    | `certbot`                | An utility that is useful to manage (generate/install/renew/revoke) SSL certificates signed by Let's Encrypt. |
-    | `python3-certbot-apache` | A certbot plugin to work with apache. It will automatically setup apache configuration for us in a blink.     |
-    | `fail2ban`               | A log analyzer that work with the firewall to ban suspicious activities.                                      |
-    | `iptables-persistent`    | An utility that will persist our firewall configuration.                                                      |
+    | `certbot`                | A utility that is useful to manage (generate/install/renew/revoke) SSL certificates signed by Let's Encrypt. |
+    | `python3-certbot-apache` | A Certbot plugin to work with Apache. It will automatically setup Apache configuration for us in a blink.     |
+    | `fail2ban`               | A log analyzer that works with the firewall to ban suspicious activities.                                     |
+    | `iptables-persistent`    | A utility that will persist our firewall configuration.                                                       |
 
 ??? question "Why do we need a proxy?"
 
     It seems that the time has come to discuss what we'll install on this server to fulfill our [requirements list](#requirements-list).
     The most important information in this requirements list now is the need for **2 open ports** ^^and^^ the need for access in **most restrictive networks**.
-    But, what actually are restrictive networks? Why is that important?
+    But what actually are restrictive networks? Why is that important?
     
-    If at home your gateway (the device that connects your home network to Internet) do not restrict your online activities,
-    in an entreprise or school network the gateway firewall will most likely block the inbound and outbound trafic on almost every
-    ports. Not so long ago, it left two ports open to internet: 
+    If at home your gateway (the device that connects your home network to the Internet) do not restrict your online activities,
+    in an enterprise or school network the gateway firewall will most likely block the inbound and outbound traffic on almost every
+    port. Not so long ago, it left two ports open to the Internet: 
     
     - 80 (HTTP)
     - 443 (HTTPS)
@@ -273,14 +273,14 @@ sudo apt-get install -y apache2 npm certbot python3-certbot-apache fail2ban ipta
     port **80** almost disappeared from most of the firewalls' configurations. As such, it leaves us with... port **443**. However, our wonderful
     application still needs two open ports.
     
-    It looks like we're screwed, isnt'it?
+    It looks like we're screwed, isn't it?
     
     Not even close. God bless **proxies**!
     
     If you don't know what a proxy is: it's something that acts like an interface between two other things. When it receives a request,
     it will not answer it himself but rather will forward the request to another service to get the answer, and then send it back to the requester.
     
-    So we can setup a proxy that will expose only one **public port** (443 in our case), and route the trafic on two **private ports** on which 
+    So we can set up a proxy that will expose only one **public port** (443 in our case), and route the traffic on two **private ports** on which 
     our **ITRocks** server will be listening. Another welcome benefit is that you can reload the proxy when SSL certificates are renewed without
     closing ongoing connections. Pretty cool, huh?
 
@@ -293,9 +293,9 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 { no-linenums }
 
-!!! note "This command downloads the last `nvm` version **at the moment this document has been written**, to install the last version, please read the [install section of their github](https://github.com/nvm-sh/nvm#install--update-script){ target="_blank" }"
+!!! note "This command downloads the last `nvm` version **at the moment this document has been written**, to install the last version, please read the [install section of their GitHub](https://github.com/nvm-sh/nvm#install--update-script){ target="_blank" }."
 
-Then we install the version of node that will run our server. `Hydrogen` is the last **LTS** (v18.14.2) version at the moment this document have been written:
+Then we install the version of **NodeJS** that will run our server. `Hydrogen` is the last **LTS** (v18.14.2) version at the moment this document has been written:
 
 ```bash
 nvm install Hydrogen
@@ -321,8 +321,8 @@ Then, `node -v` should print `v18.14.2`
     If a **Github Action** is configured for the current server, you must follow [additional instructions](#github-automation)
     for this version change to take effect when the **Github Action** will run `npm install` !
 
-    For now, it shouldn't. But if you come back later or if you didn't followed all steps and encounter strange error messages
-    while trying to run a **Github Action**, carefuly read the above link.
+    For now, it shouldn't. But if you come back later or if you didn't follow all steps and encounter strange error messages
+    while trying to run a **Github Action**, carefully read the above link.
 
 ### Installing ITRocks
 
@@ -342,7 +342,7 @@ git config core.fileMode false
 
     The command `git config core.fileMode false` is mandatory to **avoid** git to track **local file system permissions changes**. 
     
-    If you don't run this command, when the git hooks that we will setup below will change group ownership of all files, 
+    If you don't run this command, when the git hooks that we will set up below will change group ownership of all files, 
     git will later prevent to checkout/pull before stashing or committing.
 
 Now, we need to create a `deploy token` to be able to pull, since the repository is private (do not change generated file path/name, you don't need a passphrase):
@@ -379,14 +379,14 @@ chmod 770 config
 ```
 { no-linenums }
 
-Now, you need to copy the content of `id_rsa.pub`. You can use the linux `scp` command from another terminal to download it, or just print it to the console to be able to copy it into your clipboard:
+Now, you need to copy the content of `id_rsa.pub`. You can use the Linux `scp` command from another terminal to download it, or just print it to the console to be able to copy it into your clipboard:
 
 ```bash
 cat id_rsa.pub
 ``` 
 { no-linenums }
 
-The public key must be set as `deploy key` on `GitHub`. To do so, go the the project repository, click on the `settings` in the top tabs, then choose `Deploy Keys` in the left panel, and click the `Add deploy key` button, top right.
+The public key must be set as `deploy key` on `GitHub`. To do so, go to the project repository, click on the `settings` in the top tabs, then choose `Deploy Keys` in the left panel, and click the `Add deploy key` button, top right.
 
 Type a meaningful name as `Public production key on [Provider] VPS` as title, and paste the previously copied `ìd_rsa.pub` file content into the `key` field. **Do not check the `Allow write access` checkbox** for security sakes.
 
