@@ -4,17 +4,18 @@ comments: true
 
 # TODO list
 
-A simple personal reminder for pending ideas & work to be done on this website :)
+A simple personal reminder for pending ideas & work to be done on this website :smile: It's very informal and only act as
+a reminder.
 
 ## Articles
 
 - [ ] DX
-- [ ] What is code (and why AI's are not that much a big deal (very complex compilers?))
+- [ ] What is code (and why AIs are not that much a big deal (very complex compilers?))
 - [ ] Git branching model
 - [ ] Mkdocs + material theme
-    * [ ] Contact form api + component
+    * [ ] Contact form API + component
     * [ ] Documentation writing
-    * [ ] Home page customisation
+    * [ ] Home page customization
 - [ ] Relational Model DB Configuration storage
 - [ ] uws-compat-layer
 - [ ] wssf framework

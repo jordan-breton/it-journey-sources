@@ -15,7 +15,7 @@ In simplest cases and for simplest projects, we don't bother with SSL certificat
 work with some feature that won't work without it like WebRTC or PWA. Same thing if you want to 
 start working with third party APIs.
 
-Generating self-signed certificate quickly become mandatory, and managing them between several projects
+Generating self-signed certificate quickly becomes mandatory, and managing them between several projects
 can be challenging if you don't do it properly...
 
 Have you ever heard about Root Certificates? It makes our lives better :wink:
@@ -98,7 +98,7 @@ openssl rsa -in demo.dev.local.key -out demo.dev.local.decrypted.key
 !!! danger
 
     When generating your certificates, you will be printed some questions about certificate 
-    (Common Name, Organisation infos, mail, etc.).
+    (Common Name, Organization info, email, etc.).
 
     The CN (Common Name) must be **^^UNIQUE^^** for **^^EACH^^** certificate, including the root **CA**. 
     If not, **NodeJS** will reject your certificates and mark them as `self-signed`

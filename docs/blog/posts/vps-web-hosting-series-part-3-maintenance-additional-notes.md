@@ -14,12 +14,12 @@ links:
 # VPS & Web Hosting series part 3: Maintenance & additional notes
 
 So... we did install everything we needed on our VPS to fulfill our client (ITRocks) requirements.
-The app is running blazing fast, its secured and all but...
+The app is running blazing fast, it's secured and all but...
 
-Did you though it was enough? Or did you secretly hoped that there will be more? Maybe both! 
+Did you think it was enough? Or did you secretly hope that there will be more? Maybe both! 
 
 Let's go a step further with this last part. To be fair, this part could have been itself an entire
-series, but we've already learned a lot, and what can be done next is... an almost infinite amount of things depending on your use cases.
+series, but we've already learned a lot, and what can be done next is... an almost infinite number of things depending on your use cases.
 
 <!-- more -->
 
@@ -37,11 +37,11 @@ series, but we've already learned a lot, and what can be done next is... an almo
 
 ## Additional implicit requirements
 
-Very often when you deal with a client (even if he work in IT), you have to fulfill some requirements that said client
-didn't even phrased. Being able to anticipate his/her need is a soft skill that come with experience.
+Very often when you deal with a client (even if he works in IT), you have to fulfill some requirements that said client
+didn't even phrase. Being able to anticipate his/her need is a soft skill that comes with experience.
 
 Some of those implicit requirements depends on the client and its project, but at least one of them is
-100% applicable everytime you do such a work for anyone:
+100% applicable every time you do such a work for anyone:
 
 ### Documentation
 
@@ -52,32 +52,34 @@ Documentation is **^^NOT^^** optional.
 </div>
 
 What if I told you that I love writing it? And what if a told you that ^^you^^ can learn to love it too? This will be the subject of
-another article :wink: For now, just remember that documentation in general is mandatory. Our job is complex, we make decisions all the day,
-choose all the day long that solution instead of that other one. Our Tech stacks are growing faster than the whole universe expansion every year.
+another article :wink: For now, just remember that documentation in general is mandatory. Our job is complex, we make decisions all day,
+choose all day long that solution instead of that other one. Our Tech stacks are growing faster than the whole universe expansion every year.
 
 We just can't afford the cost of undocumented whatever in this battlefield.
 
 #### Why is it important?
 
 No matter who you are and why you ended up installing and configuring this **VPS**, you must create a document
-that explain what you did and how. The why is not that important in this kind of documentation, unless explaining
+that explains what you did and how. The why is not that important in this kind of documentation unless explaining
 something very tricky and specific to the project itself.
 
-So, creating this documentation is mandatory because:
+So, creating this documentation is mandatory for the following reasons:
 
-1. Transmission. Someone else than you will probably have to maintain the server for whatever reason
-2. Chaos reduction. They are literally thousands of tools, commands, packages and configuration tweaks that can lead to the same result,
-   so knowing what have been done is not just a matter of experience and skills.
-3. Highlighting gotchas. Even if you're the only maintainer for the whole project life, if you have to come back three years later, you'll probably
+1. **Transmission**: Someone else than you will probably have to maintain the server for whatever reason.
+2. **Chaos reduction**: They are literally thousands of tools, commands, packages and configuration tweaks that can lead to the same result,
+   so knowing what has been done is not just a matter of experience and skills.
+3. **Highlighting gotchas**: Even if you're the only maintainer for the whole project life, if you have to come back three years later, you'll probably
    break something because you'll not remember that because `A`, `B` and the conjunction of `C & D | E`, you must run this command after this one
    if it has not been written somewhere. 
-4. Legacy. If you or someone else have to change something, you want this someone to document his/her changes. Without an existing documentation, this change will be forgotten too.
-5. Auditability. It attests the work you've done so far, and if someone else breaks something, you'll be glad to demonstrate that it was not you.
-6. Reviewing. If **you** misconfigured something, someone will be able to spot it reading your exhaustive documentation. This is probably the best benefit of this list!
-7. Proofreading. If you misconfigured something, proofreading your documentation a week or two later will help you spot your error.
-8. Aren't there still enough good reasons to write this documentation yet? Do you really need another one? :smile:
+4. **Legacy**: If you or someone else have to change something, you want this someone to document his/her changes. Without an existing documentation, this change will be forgotten too.
+5. **Auditability**: It attests the work you've done so far, and if someone else breaks something, you'll be glad to demonstrate that it was not you.
+6. **Reviewing**: If **you** misconfigured something, someone will be able to spot it reading your exhaustive documentation. This is probably the best benefit of this list!
+7. **Proofreading**: If you misconfigured something, proofreading your documentation a week or two later will help you spot your error.
+8. Aren't there still enough reasons to write this documentation yet? Do you really need another one? :smile:
 
-All of this come to the last and most evident observation: writing this documentation will **actually** save time & money, both for you and your client/company, in a way or another!
+All of this come to the last and most evident observation: writing this documentation will **actually** save time and money, both for you and your client/company, in a way or another!
+
+!!! note "Those reasons are adaptable and applicable to any form of IT-related work. Documentation is **always** required. Even for pet projects :wink:"
 
 #### How to write it?
 
@@ -97,7 +99,7 @@ As an example, this kind of section in your documentation can save you from a pa
 
 ??? example "Example: documentation section about server's open ports"
 
-    If you add a new service that must be reached by the itrocks server or any software that you install on this server, **do not forget to check if a new rule must be added to iptables to open a new port**.
+    If you add a new service that must be reached by the **ITRocks** server or any software that you install on this server, **do not forget to check if a new rule must be added to iptables to open a new port**.
 
     There is the exhaustive list of all open ports (**KEEP THIS LIST UP TO DATE !**):
     
@@ -113,7 +115,7 @@ As an example, this kind of section in your documentation can save you from a pa
 ### Monitoring
 
 Being able to monitor a server is one of the most important things. Is this node running smoothly or 
-do we reach it's maximum capacity? Should we consider upgrading our VPS? Spawning a new instance?
+do we reach its maximum capacity? Should we consider upgrading our VPS? Spawning a new instance?
 How many requests by second do we handle? Does our server handle high traffic peaks without downtime?
 
 Monitoring can help us understand what's going on, and, more important, can reassure us in the health of
@@ -125,14 +127,14 @@ That's why we'll [install Netdata below](#netdata).
 
 Now, let's see what can be an implicit requirement by giving an additional precision about our study case: 
 
-While speaking with our client, we learnt that he's not comfortable with commandline interface nor SSH. He did want a VPS 
-for the freedom of configuration it offers at a cheap price, but will outsource its management to someone else. 
+While speaking with our client, we learned that he's not comfortable with **CLI** nor **SSH**. He did want a **VPS** 
+for the freedom of configurations it offers at a cheap price, but will outsource its management to someone else. 
 
-All he wants to be able to do is very basic tasks from SSH once in a while (upgrading ITRocks, rebooting/upgrading the server), so he asked us
+All he wants to be able to do is very basic tasks from **SSH** once in a while (upgrading **ITRocks**, rebooting/upgrading the server), so he asked us
 to give him a simple script to do it in a blink.
 
-He said us that he likes all things to be available in the same place and one this script at the root of is project's repository. 
-And at this occasion, he added that he work with a VSCode extension to manage his GitHub repositories too.
+He told us that he likes all things to be available in the same place and one this script at the root of his project's repository. 
+And at this occasion, he added that he relies on **VSCode** extensions to manage his **GitHub** repositories too.
 
 This is exactly what I call an *implicit* requirement.
 
@@ -146,9 +148,9 @@ It allows us to go for the next task... monitoring!
 
 ### Netdata
 
-Netdata is a powerful monitoring tool that even comes with a panel. Not only is it open source, but it do provide a clean cloud environment
-**and** my favourite feature about it is... you can write your own data collector. It means that if our client wants to add metrics tailored to its
-needs, he can do it without that many efforts later, and it will integrate itself nicely in his Netdata panel!
+**Netdata** is a powerful monitoring tool that even comes with a panel. Not only is it open source, but it does provide a clean cloud environment
+**and** my favorite feature about it is... you can write your own data collector. It means that if our client wants to add metrics tailored to its
+needs, he can do it without that many efforts later, and it will integrate itself nicely in his **Netdata** panel!
 
 The icing on the cake: it is fairly simple to install, just run:
 
@@ -158,7 +160,7 @@ wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/
 { no-linenums }
 
 By default, the panel is publicly available at `http://[server ip]:19999` but our firewall rules will hopefully block it. 
-Since it's not that useful like this, we'll use `apache2` to create a new proxy especially for `netdata`.
+Since it's not that useful like this, we'll use `apache2` to create a new proxy especially for **Netdata**.
 
 Let's start by issuing some self-signed certificates:
 
@@ -170,7 +172,7 @@ sudo openssl req -x509 -nodes -days 365 \
 ```
 { no-linenums }
 
-Now we need to create a new `apache2` configuration:
+Now we need to create a new `apache2` configuration file:
 
 ```bash
 sudo nano /etc/apache2/sites-available/vps.netdata.itrocks.com.conf
@@ -225,17 +227,17 @@ sudo systemctl reload apache2
 
 You can now browse [https://vps.netdata.itrocks.com](https://vps.netdata.itrocks.com) (once your domain have been set up to point to the server IP, obviously).
 
-Accept the security exception regarding the self-signed certificate, specify your username (in our case `netdata`) and the password you typed at the previous step and... voilà.
+Accept the security exception regarding the self-signed certificate, specify your username (in our case **Netdata**) and the password you typed at the previous step and... voilà.
 
 Metrics everywhere!
 
-!!! note "I leave it to you to use `certbot` to get a valid certificate instead :wink:"
+!!! note "I leave it to you to use Certbot to get a valid certificate instead :wink:"
 
 ### GitHub Actions
 
 GitHub Actions are an amazing tool you should put your hands on ASAP if you didn't yet!
 
-Since our client is used to **VSCode** and not comfortable with **CLI**, lets set up a **GitHub Action** that will be integrated directly in its favourite code editor in
+Since our client is used to **VSCode** and not comfortable with **CLI**, lets set up a **GitHub Action** that will be integrated directly in its favorite code editor in
 no time with a [plugin like `GitHub Actions`](https://marketplace.visualstudio.com/items?itemName=cschleiden.vscode-github-actions){ target="_blank" }
 
 To allow him to deploy directly from the main GitHub repository in tab `Actions`, you must start by creating three secrets into `Settings` -> `Secrets`.
@@ -292,7 +294,8 @@ jobs:
 
 ---------
 
-Commit to the main branch, and voilà, you'll be able to [use your new GitHub Action as explained in the maintenace section](#github-actions), except you obviously want to select the action you just added.
+Commit to the main branch, and voilà, you'll be able to [use your new GitHub Action as explained in the maintenance section](#github-actions),
+except you obviously want to select the action you just added.
 
 I leave it to you to create the same kind of **GitHub Action** to upgrade and reboot the server at will :wink:  
 
@@ -301,13 +304,13 @@ I leave it to you to create the same kind of **GitHub Action** to upgrade and re
 First of all, we could have installed a tool like [Plesk](https://www.plesk.com/){ target="_blank } or [CPanel](https://cpanel.net/){ target="_blank }. 
 Note that it's proprietary/licensed with a paid version.
 
-For our job, I feel like a plesk panel is too much for our case: our client just need to push a new release in production, to upgrade the server
+For our job, I feel like a **Plesk panel** is too much for our case: our client just need to push a new release in production, to upgrade the server
 or just to reboot it.
 
-The maintenance of our **VPS** is minimal, since `certbot` auto-renew all needed certificate automatically and reload `apache2` by its own.
+The maintenance of our **VPS** is minimal, since Certbot auto-renew all needed certificate automatically and reload **Apache2** by its own.
 We may want to log in to reboot the server every month or so to apply some pending security updates.
 
-The only other real maintenance you would want to do is to deploy a new `ITRocks` version.
+The only other real maintenance you would want to do is to deploy a new **ITRocks** version.
 
 To deploy a new update, you must sync the server with the main repository `release` branch. 
 So, first, you must ensure your changes have been pushed to the `release` branch, then all you have 
@@ -315,7 +318,7 @@ to do is a `git pull` on the **VPS**.
 
 To do so, you have two choices :
 
-1. The Wonderful GitHub Action we just set up at previous step
+1. The Wonderful GitHub Action we just set up at the previous step
 2. Command line + **SSH**
 
 ### GitHub Actions

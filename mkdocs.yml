@@ -173,6 +173,8 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: ['snippets/']
       check_paths: true
+      auto_append:
+        - includes/glossary.md
   - pymdownx.progressbar
   - abbr
   - toc:

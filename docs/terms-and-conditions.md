@@ -14,7 +14,7 @@ The IT Journey site is hosted by: OVH, whose head office is located at the follo
 
 The IT Journey site aims to:
 
-Information sharing around IT in general and presenting myself to eventual clients/recruiters.
+Information sharing around IT in general and presenting myself to potential clients/recruiters.
 
 ## ARTICLE 3. CONTACT
 
@@ -76,10 +76,10 @@ Finally, IT Journey reserves the right to have a hypertext link pointing to its 
 
 ### 1. DATA COLLECTED AND PROCESSED, AND DATA COLLECTION METHOD
 
-In accordance with the provisions of Article 5 of European Regulation 2016/679, the collection and processing of site user data complies with the following principles:
+In accordance with the provisions of Article 5 of European Regulation 2016/679, the collection and processing of site user data comply with the following principles:
 
 - Legality, loyalty and transparency: data can only be collected and processed with the consent of the user who owns the data. Each time personal data is collected, the user will be informed that his data is collected, and for what reasons his data is collected;
-- Limited purposes: the collection and processing of data is carried out to meet one or more objectives determined in these general conditions of use;
+- Limited purposes: the collection and processing of data are carried out to meet one or more objectives determined in these general conditions of use;
 - Minimization of the collection and processing of data: only the data necessary for the proper execution of the objectives pursued by the site are collected;
 - Retention of reduced data over time: the data is kept for a limited period, of which the user is informed. If the retention period cannot be communicated to the user;
 - Integrity and confidentiality of the data collected and processed: the data controller undertakes to guarantee the integrity and confidentiality of the data collected.
@@ -90,9 +90,9 @@ In accordance with the provisions of Article 5 of European Regulation 2016/679, 
 - The processing meets a legal obligation;
 - The processing is explained by a necessity linked to the safeguard of the vital interests of the person concerned or of another natural person;
 - The processing can be explained by a necessity linked to the performance of a task in the public interest or which comes under the exercise of public authority;
-- The processing and collection of personal data is necessary for the purposes of the legitimate and private interests pursued by the controller or by a third party.
+- The processing and collection of personal data are necessary for the purposes of the legitimate and private interests pursued by the controller or by a third party.
 
-The IT Journey site **do not collect any data**.
+The IT Journey site **does not collect any data**.
 
 ### 2. HOSTING OF DATA
 

@@ -17,7 +17,7 @@ Yet, the quickest way to grasp my personality and my IT journey is to read the f
 
 ### 2012
 
-I graduated from high school with a science-oriented baccalaureate.
+I graduated from high school with a scientific baccalaureate in engineering sciences.
 
 </div>
 </div>
