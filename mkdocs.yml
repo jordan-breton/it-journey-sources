@@ -2,7 +2,8 @@ site_name: IT Journey
 site_description: "This website has two purposes: introducing myself and talking about passionating IT-related stuff :)"
 site_author: Jordan Breton
 site_dir: ../generated
-site_url: https://it-journey.tech
+site_url: http://192.168.1.230
+#site_url: https://it-journey.com
 copyright: >
   Copyright &copy; 2023 Jordan Breton –
   <a href="#__consent">Change cookie settings</a>

@@ -105,7 +105,7 @@ This is one of those domains where time and practice are the only way to mastery
 
      ---
 
-     My work is not about knowing or memorizing everything, but rather knowing where to search for, keeping my knowledge up to date
+     My work isn't about knowing or memorizing everything, but rather knowing where to search for, keeping my knowledge up to date
      and reading/listening/watching as much as possible about as different non-related subjects as possible.
 
      This way, I can dig and thorough a subject later, when I think that it may be useful for my current task, mission or project.

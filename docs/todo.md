@@ -17,7 +17,7 @@ a reminder.
     * [ ] Documentation writing
     * [ ] Home page customization
 - [ ] Relational Model DB Configuration storage
-- [ ] uws-compat-layer
+- [ ] uws-reverse-proxy
 - [ ] wssf framework
     * [ ] DIC
     * [ ] WebComponents
@@ -28,7 +28,6 @@ a reminder.
 - [ ] DNS server for home network
 - [ ] Don't fear to not being smart enough: you'll love working in IT!
 - [ ] The NPM problem
-- [ ] NodeJS, HTTP and Websocket: a love/hate relationship
 - [ ] 🎶 I'm a poor lonesome dev 🎶
 - [ ] My first project, what a failure!
 - [x] SSL certificate for dev environment
