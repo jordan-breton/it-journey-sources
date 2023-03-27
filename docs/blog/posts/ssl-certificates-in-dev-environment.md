@@ -85,7 +85,7 @@ IP.1 = 192.168.1.14
 Then run the following commands to generate all required files :
 
 ``` bash
-openssl genrsa -out my-birth-plan.dev.local.key -des3 2048
+openssl genrsa -out demo.dev.local.key -des3 2048
 openssl req -new -key demo.dev.local.key -out demo.dev.local.csr
 openssl x509 -req -in demo.dev.local.csr \
         -CA ../CA.pem -CAkey ../CA.key -CAcreateserial \
