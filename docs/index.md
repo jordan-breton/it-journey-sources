@@ -93,8 +93,6 @@ active customer base for years.
 
 </div>
 
---8<-- "job-opportunities.md"
-
 <div class="buttons" markdown>
 
 [:material-email: Contact me](/about){ .md-button .md-button--primary }

@@ -103,15 +103,13 @@ building something huge and modular from scratch. I even started to learn digita
 
 ### Tomorrow
 
-Even if I love what I'm doing right now, I kinda start to feel the urge to move forward again. Being passionate and
-amazed by the cybersecurity field since I started my IT journey, I'm currently preparing several certifications to finally
-get into this fascinating domain.
+Even if I love what I'm doing right now, I kinda start to feel the urge to move forward again.
 
-Since this step forward is a very important one to me, I made a [certification roadmap](/about/roadmap) and will create
-a [YouTube channel]() about my progression. The main goal being to be better at speaking English, keep motivation to learn the tremendous amount
- of things I have to learn to achieve my objective and share with potentially interested people my experience doing so.
+I will create a [YouTube channel](https://www.youtube.com/@IT-Journey) and start live experiments about many advanced programming topics.
+The main goal being to keep motivation to learn the tremendous amount
+ of things I still have to learn despite my great experience in the field the past eight years.
 
-May it be an encouragement for some folks around there that would want to enter the cybersecurity field too and didn't dare to make the first move yet :)
+May it be an encouragement for some folks around there that would want to enter the web dev field too and didn't dare to make the first move yet :)
 
 </div>
 </div>

@@ -220,3 +220,128 @@ contribute and/or report any issue :wink:
 
 </div>
     
+## Performances & important considerations
+
+As I said before, **uws-reverse-proxy** is a **reverse proxy**. It means that it will **not** handle the requests
+itself, but will forward them to another server.
+
+This forwarding implies that the proxy will have to **parse** the request, **build** a new one, and **send** it to the
+server. This is a **costly** operation, and it will **not** be as fast as if you were to handle the requests yourself.
+
+The operational cost of the poxy heavily depends on the configuration your use for your HTTP server and your uWebSockets.js
+server. We can distinguish two scenarios.
+
+### uWebSockets.js and the http server are running on the same process
+
+!!! warning "**This is the worst case scenario**."
+
+Because **NodeJS** is single-threaded, adding an intermediate layer (the proxy) will drastically reduce the
+performances of your application. You should use this configuration only for **testing** purposes or if you have no 
+other choice, because the impact you should expect from this is **at least a 50% decrease in requests handled by second**.
+
+In this scenario, not only your HTTP server will perform really slowly, but your uWebSockets.js server will also be
+affected. Remember what is happening on a single thread:
+
+=== "With uws-reverse-proxy"
+
+    ```mermaid
+    sequenceDiagram
+        participant CL as Client
+        participant UWS as uWebSockets.js (port 443)
+        participant CH as HTTP Client
+        participant HS as HTTP Server
+        CL ->> UWS: Send HTTP request
+        UWS ->> CH: Receive HTTP request
+        CH ->> HS: Forward HTTP request
+        HS ->> CH: Respond 
+        CH ->> UWS: Forward
+        UWS ->> CL: Respond
+    ``` 
+
+=== "Without uws-reverse-proxy (2 ports)"
+
+    ```mermaid
+    sequenceDiagram
+        participant CL as Client
+        participant HS as HTTP server (port 443)
+        participant uWebSockets.js (port 4430)
+        CL ->> HS: Send HTTP request
+        HS ->> CL: Respond
+    ```
+
+=== "Without uWebSocket.js (1 port)"
+
+    ```mermaid
+    sequenceDiagram
+        participant CL as Client
+        participant HS as HTTP/WebSocket Server (port 443)
+        CL ->> HS: Send HTTP request
+        HS ->> CL: Respond
+    ```
+
+!!! note "In every scenario, the websocket server is directly connected to the client."
+
+### uWebSockets.js and the http server are running on different processes
+
+This is the best configuration, and the one you should use in production. The proxy will be able to handle requests in 
+parallel, and will not be a bottleneck for your application.
+
+But since we still add a layer in front of your HTTP server, you should expect **between 10% and 15% decrease in requests handled by second**.
+The proxy will add a latency to handle the request and forward it to the HTTP server and then receive the response to forward it back to the client.
+
+Where this solution shine is that it will allow you to get the best performances possible for websocket connections, since 
+they will be handled by the uWebSockets.js server itself, and not by any proxy:
+
+=== "With uws-reverse-proxy"
+
+    ```mermaid
+    sequenceDiagram
+        participant CL as Client
+        participant UWS as uWebSockets.js (port 443)
+        CL ->> UWS: ws://connect
+        UWS ->> CL: Connected
+    ```
+
+=== "With an Apache / NGinx proxy"
+
+    ```mermaid
+    sequenceDiagram
+        participant CL as Client
+        participant AP as Apache / NGinx
+        participant UWS as uWebSockets.js (port 443)
+        CL ->> AP: ws://connect
+        AP ->> UWS: ws://connect
+        UWS ->> AP: Connected
+        AP ->> CL: Connected
+    ```
+
+That being said, using **uWebSockets.js** and your HTTP server in two different processes can bring up its own problems for your 
+application, especially if you're in one of the following situations:
+
+- Your HTTP server and your WebSockets server must share a state (your application is stateful)
+- Your HTTP server must be able to interact with the websocket server (like sending a message to a specific client, 
+  closing a connexion when a session expire, etc.)
+
+While the first one is clearly a bad practice, the second one is a common usage. To overcome the problem introduced by the need of multiple processes,
+you can for example leverage the `child_process` module to start **uws-reverse-proxy** in the main process, and the HTTP server in the child process.
+
+Then, you just need to use the native `process.send()` method to send messages to the child process, and the `process.on('message')` method to listen to messages 
+from the child process. This way, your HTTP server will be able to interact with the websocket server as if they were running in the same process.
+
+!!! note "I'm willing to provide some examples in the documentation about this, and maybe create a `UWSProxyClient` to allow you to easily work in this situation when I'll have some spare time."
+
+## Conclusion
+
+As you've certainly guessed, this proxy is not meant to be used mindlessly, but it can be really useful in some
+specific scenarios. It should be used as a **temporary solution** to quickly mitigate server instability or websockets
+congestion due to poor Socket.IO performances.
+
+This way, it offers you some decent time to adapt your HTTP server to **uWebSockets.js**, and to get rid of the proxy once you're done.
+The community is already proposing some good alternatives/adapters for some well known frameworks. As a good express alternative 
+to speed up this process, you should take a look at [HyperExpress](https://github.com/kartikk221/hyper-express).
+
+I hope you enjoyed this article, and that you'll find **uws-reverse-proxy** useful. I'm open to any feedback, 
+and I'll be happy to answer any question you may have.
+
+If you encounter any bug or if you have any suggestion, feels free to open an issue (or a PR :wink:) on the 
+[github repository](https://github.com/jordan-breton/uws-reverse-proxy).

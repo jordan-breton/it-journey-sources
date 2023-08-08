@@ -34,8 +34,6 @@ I'm a passionate developer, and I strongly believe in what **John Heywood** said
 
 </div>
 
---8<-- "job-opportunities.md"
-
 ### Contact
 
 <div class="grid cards" markdown>

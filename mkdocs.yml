@@ -14,7 +14,6 @@ nav:
   - About:
       - 'about/index.md'
       - Skills: 'about/skill-set.md'
-      - Certifications Roadmap: 'about/roadmap.md'
       - History: 'about/history.md'
   - Blog:
     - blog/index.md

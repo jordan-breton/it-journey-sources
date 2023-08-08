@@ -249,9 +249,9 @@ a fully fledged multi-domain mail server, with web mail client, multi-domain web
 
 <div class="grid cards split" markdown>
 
+-   <span markdown>:material-react:{ .lg } **React.js** </span> <span class="lvl lvl4">:material-star::material-star::material-star::material-star::material-star-outline::material-star-outline:</span>
 -   <span markdown>:simple-magento:{ .lg } **Magento2** </span> <span class="lvl lvl4">:material-star::material-star::material-star::material-star::material-star-outline::material-star-outline:</span>
 -   <span markdown>:material-wordpress:{ .lg } **Wordpress** </span> <span class="lvl lvl3">:material-star::material-star::material-star::material-star-outline::material-star-outline::material-star-outline:</span>
--   <span markdown>:material-react:{ .lg } **React** </span> <span class="lvl lvl2">:material-star::material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span>
 -   <span markdown>:material-angular:{ .lg } **Angular**</span> <span class="lvl lvl2">:material-star::material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span>
 -   <span markdown>:material-vuejs:{ .lg } **Vue.js** </span> <span class="lvl lvl2">:material-star::material-star::material-star-outline::material-star-outline::material-star-outline::material-star-outline:</span>
 
@@ -292,10 +292,7 @@ a fully fledged multi-domain mail server, with web mail client, multi-domain web
     More generally, working with any cloud/service providers either with their UI and/or through their APIs is not that hard and
     only requires to be able to read their documentation **most of the time**. 
 
-    That being said, being a Cloud Engineer is not trivial at all, especially when it comes to working with the most famous providers.
-    
-    I [plan to apply for cloud formations to get certified](/about/certification-roadmap) for Azure and AWS as soon as possible, since I love their services and
-    staying up to date.
+    That being said, being a Cloud Engineer is not trivial at all, especially when it comes to working with the most famous providers. I would love to experiment with them in the near future.
 
     The thing is... days are only 32 hours long, aren't they?
 
